@@ -1,0 +1,44 @@
+// Colors
+// ---------------------------------
+
+// Default
+
+$color-default-black:               #000000;
+$color-default-white:               #ffffff;
+$color-transparent:                 rgba(255, 255, 255, 0);
+$color-error:                       #ff0000;
+
+// Project palette
+// для нейминга цветов используем https://www.htmlcsscolor.com/hex/334482
+
+
+// Gradient
+
+$black-to-right:                    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
+
+// Typography
+// ---------------------------------
+
+// переменная используемая в html для подключения скейлинга
+$fz-default:                         16px;
+$ff-titles:                          "Bebas Neue", "Arial", sans-serif;
+$ff-default:                         "Roboto Condensed", "Arial", sans-serif;
+
+// Viewports
+// ---------------------------------
+
+$vp-320:                            320px;
+$vp-768:                            768px;
+$vp-1200:                           1200px;
+
+// Retina
+// ---------------------------------
+
+$retina-dpi:                        144dpi;
+$retina-dppx:                       1.5dppx;
+
+// Paddings
+// ---------------------------------
+$desktop-padding:                   103/1366 * 100%;
+$tablet-padding:                    45/768 * 100%;
+$mobile-padding:                    0;
