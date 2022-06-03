@@ -1,0 +1,251 @@
+.header {
+  background: $intro-bg;
+  min-height: 658px;
+  padding: 0 0 30px 0;
+
+  @include vp-1200 {
+    min-height: 554px;
+  }
+
+  @include vp-768 {
+    min-height: 491px;
+    padding: 0 15/320 * 100%;
+  }
+}
+
+.header__contacts {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 0 0 0;
+
+  @include vp-1200 {
+    padding: 38px 0 0 0;
+  }
+
+  @include vp-768 {
+    padding: 18px 0 0 0;
+  }
+
+  svg {
+    @include vp-1200 {
+      width: 82px;
+      height: 17px;
+    }
+
+    @include vp-768 {
+      width: 68px;
+      height: 15px;
+    }
+  }
+
+  a {
+    font: 700 1.63em/1em $ff-titles;
+    color: $color-default-white;
+    letter-spacing: 0.03em;
+    transition: color 0.3s ease 0s;
+
+    @include vp-1200 {
+      font: 700 1.5em/1em $ff-titles;
+      letter-spacing: 0.02em;
+    }
+
+    @include vp-768 {
+      font: 700 1.25em/1em $ff-titles;
+    }
+
+    @media (hover: hover), screen and (min-width: $vp-1200) {
+      &:hover,
+      &:focus {
+        outline: none;
+        color: $color-blue;
+      }
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+  }
+}
+
+.header__intro {
+  display: flex;
+  justify-content: space-between;
+  text-align: right;
+  margin-top: -3px;
+  min-height: 556px;
+  padding: 111px 0 0 0;
+  background: url("../img/intro.jpg") 69.5% top no-repeat;
+
+  @include retinaD {
+    background-image: url("../img/intro@2x.jpg");
+    background-size: 500px 556px;
+  }
+
+  @include vp-1200 {
+    margin-top: 0;
+    min-height: 390px + 20px;
+    padding: 68px 0 0 0;
+    background: url("../img/intro-tablet.jpg") right 20px no-repeat;
+
+    @include retinaD {
+      background-image: url("../img/intro-tablet@2x.jpg");
+      background-size: 324px 390px;
+    }
+  }
+
+  @include vp-768 {
+    background: none;
+    min-height: auto;
+    padding: 72px 0 0 0;
+  }
+}
+
+.header__titles {
+  color: $color-default-white;
+  width: 394px;
+
+  @include vp-1200 {
+    width: 325px;
+  }
+
+  @include vp-768 {
+    width: 100%;
+  }
+
+  p {
+    @include reset-margins;
+    font: 400 3.07em/1.2em $ff-titles;
+    letter-spacing: 0.03em;
+
+    @include vp-1200 {
+      font: 400 2.13em/1.2em $ff-titles;
+    }
+
+    @include vp-768 {
+      font: 400 1.75em/1.2em $ff-titles;
+    }
+  }
+
+  h1 {
+    @include reset-margins;
+    font: 700 6.82em/1em $ff-titles;
+    letter-spacing: 0.03em;
+
+    @include vp-1200 {
+      font: 700 5.4em/0.98em $ff-titles;
+    }
+
+    @include vp-768 {
+      max-width: 350px;
+      margin-left: auto;
+      font: 700 5em/1em $ff-titles;
+      letter-spacing: 0.02em;
+    }
+  }
+
+  a {
+    display: block;
+    margin-left: auto;
+    max-width: 230px;
+    padding: 20px;
+    font: 700 0.75em/1.2em $ff-default;
+    color: $color-default-white;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border: 4px solid $color-default-white;
+    text-align: center;
+    transition: all 0.3s ease 0s;
+
+    @include vp-1200 {
+      max-width: 183px;
+    }
+
+    @include vp-768 {
+      max-width: 100%;
+      font: 700 0.75em/1.2em $ff-default;
+    }
+
+    @media (hover: hover), screen and (min-width: $vp-1200) {
+      &:hover,
+      &:focus {
+        background-color: $color-default-white;
+        color: $color-blue;
+      }
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+}
+
+.header__services-list {
+  @include reset-margins;
+  list-style: none;
+  max-width: 120px;
+  margin-top: -80px;
+  margin-left: 15px;
+  padding-bottom: 84px;
+
+  @include vp-1200 {
+    margin-top: -71px;
+    margin-left: -5px;
+    padding-bottom: 60px;
+  }
+
+  @include vp-768 {
+    margin-left: auto;
+    margin-right: 176px;
+  }
+
+  li {
+    font: 400 0.88em/1.2em $ff-default;
+    color: $color-default-white;
+
+    &:not(:last-of-type) {
+      margin-bottom: 4px;
+    }
+  }
+}
+
+.header__social-list {
+  @include reset-margins;
+  list-style: none;
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 500px;
+  margin: 0 -10px 34px 0;
+
+  @include vp-1200 {
+    display: none;
+  }
+
+  li {
+    line-height: 0;
+  }
+
+  a {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 10px;
+    font: 400 0.75em/1em $ff-default;
+    color: $color-default-white;
+    text-transform: uppercase;
+    transition: color 0.3s ease 0s;
+
+    @media (hover: hover), screen and (min-width: $vp-1200) {
+      &:hover,
+      &:focus {
+        outline: none;
+        color: $color-blue;
+      }
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+  }
+}

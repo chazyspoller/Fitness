@@ -1,5 +1,5 @@
 @mixin retinaD {
-  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) and (min-width: $vp-1024) {
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) and (min-width: $vp-1200) {
     @content;
   }
 }
