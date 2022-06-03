@@ -12,13 +12,14 @@ $color-error:                       #ff0000;
 // для нейминга цветов используем https://www.htmlcsscolor.com/hex/334482
 
 $color-blue:                        #102654;
-$color-dark-blue:                   #030A1A;
-$color-pink:                        #ED0233;
+$color-dark-blue:                   #030a1a;
+$color-pink:                        #ed0233;
 
 // Gradient
 
 $black-to-right:                    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
-$intro-bg:                          conic-gradient(from 130.31deg at 16.03% 39.06%, #B80027 -46.69deg, #003D85 32.24deg, #B80027 313.31deg, #003D85 392.24deg);
+$intro-bg:                          conic-gradient(from 130.31deg at 16.03% 39.06%, #b80027 -46.69deg, #003d85 32.24deg, #b80027 313.31deg, #003d85 392.24deg);
+$red-to-blue:                       linear-gradient(44.89deg, #003d85 25.38%, #b80027 74.89%);
 
 // Typography
 // ---------------------------------

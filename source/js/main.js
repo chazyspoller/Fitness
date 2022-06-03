@@ -1,5 +1,6 @@
 import './modules/modals/advantages';
 import './modules/modals/link-scroll';
+import './modules/modals/yb-video';
 
 // ---------------------------------
 
