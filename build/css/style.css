@@ -741,6 +741,107 @@ body main {
   opacity: 0.6;
 }
 
+.footer {
+  padding: 34px 0;
+  background-color: #030A1A;
+}
+
+.footer__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.footer__logo {
+  line-height: 0;
+  margin-top: 7px;
+}
+
+.footer__menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-width: 65%;
+  line-height: 0;
+  margin-top: 7px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (-webkit-max-content)[5];
+  -ms-grid-columns: (max-content)[5];
+  grid-template-columns: repeat(5, -webkit-max-content);
+  grid-template-columns: repeat(5, max-content);
+  gap: 10px 40px;
+}
+
+.footer__menu li:last-of-type {
+  -ms-grid-column: 2;
+  grid-column-start: 2;
+  -ms-grid-column-span: 1;
+  grid-column-end: 3;
+  -ms-grid-row: 1;
+  grid-row-start: 1;
+  -ms-grid-row-span: 1;
+  grid-row-end: 2;
+}
+
+.footer__menu a {
+  font: 400 0.88em/1em "Roboto Condensed", "Arial", sans-serif;
+  color: #ffffff;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.footer__menu a:active {
+  color: #ED0233;
+}
+
+.footer__social-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  max-width: 121px;
+  margin: 0 -8px 0 -3px;
+}
+
+.footer__social-list li {
+  padding: 0 3px;
+}
+
+.footer__social-list a {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 5px;
+  line-height: 0;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.footer__social-list a:active {
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+}
+
+.footer__social-list svg {
+  fill: #ffffff;
+}
+
 /* @media (hover: hover), screen and (min-width: 0\0) {
   &:hover,
   &:focus {
@@ -765,6 +866,16 @@ body main {
   .header__social-list a:focus {
     outline: none;
     color: #102654;
+  }
+
+  .footer__menu a:hover,
+  .footer__menu a:focus {
+    opacity: 0.6;
+  }
+
+  .footer__social-list a:hover,
+  .footer__social-list a:focus {
+    opacity: 0.6;
   }
 }
 
@@ -835,6 +946,16 @@ body main {
   .header__social-list {
     display: none;
   }
+
+  .footer__logo svg {
+    width: 82px;
+    height: 18px;
+  }
+
+  .footer__menu {
+    gap: 10px 30px;
+    margin-top: 9px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -895,6 +1016,80 @@ body main {
   .header__services-list {
     margin-left: auto;
     margin-right: 176px;
+  }
+
+  .footer {
+    padding: 50px 15px;
+  }
+
+  .footer__nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .footer__logo {
+    margin-top: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .footer__logo svg {
+    width: 68px;
+    height: 15px;
+  }
+
+  .footer__menu {
+    max-width: 100%;
+    margin-top: 0;
+    width: 100%;
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+    -ms-grid-rows: (-webkit-max-content)[3];
+    -ms-grid-rows: (max-content)[3];
+    grid-template-rows: repeat(3, -webkit-max-content);
+    grid-template-rows: repeat(3, max-content);
+    grid-auto-flow: row;
+    gap: 30px;
+    padding-bottom: 40px;
+  }
+
+  .footer__menu li:first-of-type {
+    -ms-grid-row: 1;
+    grid-row-start: 1;
+    -ms-grid-row-span: 2;
+    grid-row-end: 3;
+    -ms-grid-row-align: end;
+    align-self: end;
+  }
+
+  .footer__menu li:last-of-type {
+    -ms-grid-column: 1;
+    grid-column-start: 1;
+    -ms-grid-column-span: 1;
+    grid-column-end: 2;
+    -ms-grid-row: 3;
+    grid-row-start: 3;
+    -ms-grid-row-span: 1;
+    grid-row-end: 4;
+  }
+
+  .footer__menu a {
+    font: 400 1em/1em "Roboto Condensed", "Arial", sans-serif;
+  }
+
+  .footer__social-list {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .footer__social-list svg {
+    -webkit-transform: scale(1.13);
+    -ms-transform: scale(1.13);
+    transform: scale(1.13);
   }
 }
 
