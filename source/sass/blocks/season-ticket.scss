@@ -1,0 +1,65 @@
+.season-ticket {
+  padding: 120px 0;
+  background: $color-gray;
+  position: relative;
+
+  @include vp-1200 {
+    padding: 100px 0;
+  }
+
+  @include vp-768 {
+    padding: 70px 15px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -100px;
+    right: 0;
+    width: 287px;
+    height: 494px;
+    background: url("../img/prices-bg.png") 100% 100% no-repeat;
+
+    @include retinaD {
+      background-image: url("../img/prices-bg@2x.png");
+      background-size: 0 0;
+    }
+
+    @include vp-1200 {
+      background-image: url("../img/prices-bg-tablet.png");
+
+      @include retina {
+        background-image: url("../img/prices-bg-tablet@2x.png");
+        background-size: 0 0;
+      }
+    }
+
+    @include vp-768 {
+      background-image: none;
+
+      @include retina {
+        background-image: none;
+      }
+    }
+  }
+
+  h2 {
+    @include reset-margins;
+    font: 700 3.07em/1em $ff-titles;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: $color-blue;
+    margin-bottom: 50px;
+    text-align: center;
+
+    @include vp-1200 {
+      font: 700 2.63em/1em $ff-titles;
+      margin-bottom: 45px;
+    }
+
+    @include vp-768 {
+      font: 700 2em/1em $ff-default;
+      margin-bottom: 35px;
+    }
+  }
+}
