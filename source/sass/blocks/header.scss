@@ -88,16 +88,20 @@
     padding: 68px 0 0 0;
     background: url("../img/intro-tablet.jpg") right 20px no-repeat;
 
-    @include retinaD {
+    @include retina {
       background-image: url("../img/intro-tablet@2x.jpg");
       background-size: 324px 390px;
     }
   }
 
   @include vp-768 {
-    background: none;
+    background-image: none;
     min-height: auto;
     padding: 72px 0 0 0;
+
+    @include retina {
+      background-image: none;
+    }
   }
 }
 

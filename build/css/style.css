@@ -597,7 +597,7 @@ body main {
 }
 
 .header {
-  background: conic-gradient(from 130.31deg at 16.03% 39.06%, #B80027 -46.69deg, #003D85 32.24deg, #B80027 313.31deg, #003D85 392.24deg);
+  background: conic-gradient(from 130.31deg at 16.03% 39.06%, #b80027 -46.69deg, #003d85 32.24deg, #b80027 313.31deg, #003d85 392.24deg);
   min-height: 658px;
   padding: 0 0 30px 0;
 }
@@ -743,7 +743,7 @@ body main {
 
 .footer {
   padding: 34px 0;
-  background-color: #030A1A;
+  background-color: #030a1a;
 }
 
 .footer__nav {
@@ -799,7 +799,7 @@ body main {
 }
 
 .footer__menu a:active {
-  color: #ED0233;
+  color: #ed0233;
 }
 
 .footer__social-list {
@@ -903,7 +903,7 @@ body main {
   margin-bottom: 10px;
 }
 
-.gym__video {
+.gym__yb-video {
   position: absolute;
   top: 70%;
   left: 50%;
@@ -915,25 +915,11 @@ body main {
 .yb-video {
   width: 364px;
   height: 228px;
+  background-color: #000000;
+}
+
+.yb-video--enabled {
   cursor: pointer;
-}
-
-.yb-video--nojs picture {
-  display: none;
-}
-
-.yb-video--nojs button {
-  display: none;
-}
-
-.yb-video img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
 }
 
 .yb-video button {
@@ -949,16 +935,14 @@ body main {
   height: 72px;
   border: none;
   border-radius: 50%;
-  background: -o-linear-gradient(45.11deg, #003D85 25.38%, #B80027 74.89%);
-  background: linear-gradient(44.89deg, #003D85 25.38%, #B80027 74.89%);
+  background: -o-linear-gradient(45.11deg, #003d85 25.38%, #b80027 74.89%);
+  background: linear-gradient(44.89deg, #003d85 25.38%, #b80027 74.89%);
   cursor: pointer;
 }
 
 .yb-video button::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -984,6 +968,33 @@ body main {
   border-bottom-width: 9px;
   border-top-width: 9px;
   border-left: 15px solid #ffffff;
+}
+
+.yb-video__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.yb-video__link img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.yb-video__media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 .yb-video:active button {
@@ -1027,8 +1038,9 @@ body main {
   }
 
   .yb-video:hover button,
-  .yb-video:focus button {
-    background: #ED0233;
+  .yb-video button:focus {
+    outline: none;
+    background: #ed0233;
   }
 }
 
@@ -1153,16 +1165,11 @@ body main {
     display: none;
   }
 
-  .gym__video {
+  .gym__yb-video {
     top: 82%;
   }
 
   .yb-video {
-    width: 266px;
-    height: 167px;
-  }
-
-  .yb-video iframe {
     width: 266px;
     height: 167px;
   }
@@ -1181,6 +1188,13 @@ body main {
     border-bottom-width: 6px;
     border-top-width: 6px;
     border-left: 10px solid #ffffff;
+  }
+}
+
+@media (max-width: 1199px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 1199px) and (-o-min-device-pixel-ratio: 3/2), (max-width: 1199px) and (min-resolution: 144dpi), (max-width: 1199px) and (min-resolution: 1.5dppx) {
+  .header__intro {
+    background-image: url("../img/intro-tablet@2x.jpg");
+    background-size: 324px 390px;
   }
 }
 
@@ -1214,7 +1228,7 @@ body main {
   }
 
   .header__intro {
-    background: none;
+    background-image: none;
     min-height: auto;
     padding: 72px 0 0 0;
   }
@@ -1342,7 +1356,7 @@ body main {
     margin-bottom: 40px;
   }
 
-  .gym__video {
+  .gym__yb-video {
     position: static;
     -webkit-transform: translateX(0);
     -ms-transform: translateX(0);
@@ -1352,15 +1366,10 @@ body main {
   .yb-video {
     width: 100%;
   }
-
-  .yb-video iframe {
-    width: 100%;
-  }
 }
 
-@media (max-width: 1199px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 1199px) and (-o-min-device-pixel-ratio: 3/2), (max-width: 1199px) and (min-resolution: 144dpi), (max-width: 1199px) and (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 1200px), (max-width: 1199px) and (-o-min-device-pixel-ratio: 3/2) and (min-width: 1200px), (max-width: 1199px) and (min-resolution: 1.5dppx) and (min-width: 1200px) {
+@media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 767px) and (-o-min-device-pixel-ratio: 3/2), (max-width: 767px) and (min-resolution: 144dpi), (max-width: 767px) and (min-resolution: 1.5dppx) {
   .header__intro {
-    background-image: url("../img/intro-tablet@2x.jpg");
-    background-size: 324px 390px;
+    background-image: none;
   }
 }
