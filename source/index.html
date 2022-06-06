@@ -183,7 +183,7 @@
               <a href="#">купить абонемент</a>
             </li>
           </ul>
-          <ul class="tabs__content tabs__content--1 tabs__content--active" id="content-1">
+          <ul class="tabs__content tabs__content--1" id="content-1">
             <li class="tabs__content-item" data-content="trainer">
               <h3>С тренером</h3>
               <p>12 занятий</p>
@@ -224,11 +224,53 @@
               <a href="#">купить абонемент</a>
             </li>
           </ul>
-          <div class="tabs__links">
-            <a href="#content-1">1 месяц</a>
-            <a href="#content-2">6 месяцев</a>
-            <a href="#content-3">12 месяцев</a>
+          <ul class="tabs__links">
+            <li class="tabs__link-item"><a href="#content-1">1 месяц</a></li>
+            <li class="tabs__link-item"><a href="#content-2">6 месяцев</a></li>
+            <li class="tabs__link-item"><a href="#content-3">12 месяцев</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="promo">
+      <div class="container">
+        <h2 class="visually-hidden">Промо шоу</h2>
+        <div class="promo__wrapper">
+          <div class="promo__info">
+            <div class="promo__info-titles">
+              <h3>SUPER<br>GAMES</h3>
+              <div class="promo__date-wrap">
+                <div class="promo__datetime">
+                  <p>Дата</p>
+                  <p class="promo__date">
+                    <time datetime="2019-03-07 12:00">
+                      <span>7</span>
+                      <span>Марта</span>
+                      <span>2019</span>
+                    </time>
+                  </p>
+                </div>
+                <div class="promo__datetime">
+                  <p>Время</p>
+                  <p><time datetime="2019-03-07 12:00">12:00</time></p>
+                </div>
+              </div>
+            </div>
+            <p>Ежегодные соревнования по CrossFit</p>
+            <a href="#">заполнить заявку</a>
           </div>
+          <picture class="promo__image">
+            <!--<source type="image/webp" media="(max-width: 767px)" srcset="img/content/super-games-mobile.webp 1x, img/content/super-games-mobile@2x.webp 2x">
+            <source type="image/webp" media="(max-width: 1199px)" srcset="img/content/super-games-tablet.webp 1x, img/content/super-games-tablet@2x.webp 2x">
+            <source type="image/webp" srcset="img/content/super-games.webp 1x, img/content/super-games@2x.webp 2x">-->
+
+            <!-- 1х: 290px; 2x: 580px -->
+            <source type="image/jpeg" media="(max-width: 767px)" srcset="img/content/super-games-mobile.jpg 1x, img/content/super-games-mobile@2x.jpg 2x">
+            <!-- 1х: 386px; 2x: 772px -->
+            <source type="image/jpeg" media="(max-width: 1199px)" srcset="img/content/super-games-tablet.jpg 1x, img/content/super-games-tablet@2x.jpg 2x">
+            <!-- 1х: 660px; 2x: 1320px -->
+            <img src="img/content/super-games.jpg" srcset="img/content/super-games@2x.jpg 2x" alt="Фото тренажерного зала" width="660" height="500">
+          </picture>
         </div>
       </div>
     </section>

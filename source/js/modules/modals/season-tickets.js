@@ -18,23 +18,37 @@ const onContentClick = (evt) => {
 const onTabClick = (evt) => {
   evt.preventDefault();
   const id = evt.target.getAttribute('href');
+  const linkWrap = evt.target.closest('li');
   const content = document.querySelector(id);
 
-  tabLinks.forEach((link) => {
-    if (link.getAttribute('href') !== id) {
-      let block = document.querySelector(link.getAttribute('href'));
-      link.classList.remove('tabs__link--active');
-      block.classList.remove('tabs__content--active');
-      block.removeEventListener('click', onContentClick);
-    }
-  });
+  if (content) {
+    tabLinks.forEach((linkBox) => {
+      const link = linkBox.querySelector('a');
+      if (link.getAttribute('href') !== id) {
+        let block = document.querySelector(link.getAttribute('href'));
 
-  evt.target.classList.add('tabs__link--active');
-  content.classList.add('tabs__content--active');
-  content.addEventListener('click', onContentClick);
+        if (block) {
+          linkBox.classList.remove('tabs__link-item--active');
+          block.classList.remove('tabs__content--active');
+          block.removeEventListener('click', onContentClick);
+        }
+      }
+    });
+
+    linkWrap.classList.add('tabs__link-item--active');
+    content.classList.add('tabs__content--active');
+    content.addEventListener('click', onContentClick);
+  }
 };
 
-tabsContentBlocks[2].addEventListener('click', onContentClick);
-tabLinks[0].classList.add('tabs__link--active');
-tabsBlock.classList.remove('tabs--nojs');
-tabLinks.forEach((el) => el.addEventListener('click', onTabClick));
+const activateTabs = () => {
+  tabsContentBlocks[2].classList.add('tabs__content--active');
+  tabsContentBlocks[2].addEventListener('click', onContentClick);
+  tabLinks[0].classList.add('tabs__link-item--active');
+  tabsBlock.classList.remove('tabs--nojs');
+  tabLinks.forEach((el) => el.addEventListener('click', onTabClick));
+};
+
+if (tabsBlock && tabLinks.length && tabsContentBlocks.length) {
+  activateTabs();
+}

@@ -35,7 +35,7 @@
   min-height: 448px;
   background-color: $color-default-white;
   text-align: center;
-  border: 7px solid;
+  border: 7px solid transparent;
 
   @include vp-768 {
     padding: 55px 20px;
@@ -47,6 +47,15 @@
     }
   }
 
+  @media (hover: hover), screen {
+    &:hover,
+    &:focus-within {
+      border: 7px solid;
+      border-image-slice: 1;
+      border-image-source: $prices-gradient;
+    }
+  }
+  
   h3 {
     @include reset-margins;
     font: 700 1.63em/1.2em $ff-default;
@@ -111,6 +120,16 @@
   }
 }
 
+@media (hover: hover), screen {
+  .tabs__content-item:hover a,
+  .tabs__content-item a:focus {
+    background: $prices-gradient;
+    color: $color-default-white;
+    outline: none;
+  }
+}
+
+
 .tabs__content-item--active {
   @include vp-1200 {
     border: 7px solid;
@@ -125,23 +144,9 @@
   }
 }
 
-@media (hover: hover), screen {
-  .tabs__content > li:hover,
-  .tabs__content li:focus-within {
-    border: 7px solid;
-    border-image-slice: 1;
-    border-image-source: $prices-gradient;
-  }
-
-  .tabs__content > li:hover a,
-  .tabs__content a:focus {
-    background: $prices-gradient;
-    color: $color-default-white;
-    outline: none;
-  }
-}
-
 .tabs__links {
+  @include reset-margins;
+  list-style: none;
   display: flex;
   flex-wrap: wrap;
   order: 0;
@@ -157,6 +162,46 @@
     margin-bottom: 35px;
     max-width: 100%;
   }
+}
+
+.tabs__link-item {
+  position: relative;
+
+  &:not(:last-of-type) {
+    margin-right: 46px;
+
+    @include vp-1200 {
+      margin-right: 54px;
+    }
+
+    @include vp-768 {
+      margin-right: 45px;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: -46px;
+    height: 2px;
+    background-color: $color-gray-transparent;
+
+    @include vp-1200 {
+      right: -54px;
+    }
+
+    @include vp-768 {
+      right: -45px;
+    }
+  }
+
+  &:last-of-type {
+    &::after {
+      right: 0;
+    }
+  }
 
   a {
     display: inline-block;
@@ -167,6 +212,7 @@
     padding: 20px 0;
     position: relative;
     transition: color 0.3s ease 0s;
+    color: rgba($color-blue, 0.5);
 
     @include vp-1200 {
       font: 400 1.13em/1em $ff-default;
@@ -176,45 +222,9 @@
       font: 400 1em/1em $ff-default;
     }
 
-    &:not(:last-of-type) {
-      margin-right: 46px;
-
-      @include vp-1200 {
-        margin-right: 54px;
-      }
-
-      @include vp-768 {
-        margin-right: 45px;
-      }
-    }
-
-    &:last-of-type {
-      &::after {
-        right: 0;
-      }
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      right: -46px;
-      height: 2px;
-      background-color: $color-gray-transparent;
-
-      @include vp-1200 {
-        right: -54px;
-      }
-
-      @include vp-768 {
-        right: -45px;
-      }
-    }
-
     @media (hover: hover), screen and (min-width: $vp-1200) {
       &:hover,
-      &:focus {
+      &:focus-visible {
         outline: none;
         color: $color-dark-pink;
       }
@@ -222,8 +232,34 @@
   }
 }
 
-.tabs__link--active {
-  color: $color-blue;
+.tabs__link-item--active {
+  a {
+    color: $color-blue;
+    cursor: default;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $color-dark-pink;
+    }
+
+    @media (hover: hover), screen and (min-width: $vp-1200) {
+      &:hover,
+      &:focus-visible  {
+        outline: none;
+        color: $color-blue;
+      }
+    }
+  }
+}
+
+.tabs--nojs > .tabs__links > .tabs__link-item > a[href="#content-1"],
+.tabs--nojs .tabs__content--2:target ~ .tabs__links > .tabs__link-item > a[href="#content-2"],
+.tabs--nojs .tabs__content--3:target ~ .tabs__links > .tabs__link-item > a[href="#content-3"] {
   cursor: default;
 
   &::before {
@@ -237,31 +273,26 @@
   }
 }
 
-.tabs--nojs > .tabs__links > a[href="#content-1"],
-.tabs--nojs .tabs__content--2:target ~ .tabs__links > a[href="#content-2"],
-.tabs--nojs .tabs__content--3:target ~ .tabs__links > a[href="#content-3"] {
-  cursor: default;
+@keyframes visibleCard {
+  0% {
+    display: grid;
+    opacity: 0;
+  }
 
-  &::before {
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: $color-dark-pink;
+  100% {
+    opacity: 1;
   }
 }
 
-.tabs--nojs .tabs__content--1:target ~ .tabs__links > a[href="#content-1"],
-.tabs--nojs .tabs__content--2:target ~ .tabs__links > a[href="#content-2"],
-.tabs--nojs .tabs__content--3:target ~ .tabs__links > a[href="#content-3"] {
+.tabs--nojs .tabs__content--1:target ~ .tabs__links > .tabs__link-item > a[href="#content-1"],
+.tabs--nojs .tabs__content--2:target ~ .tabs__links > .tabs__link-item > a[href="#content-2"],
+.tabs--nojs .tabs__content--3:target ~ .tabs__links > .tabs__link-item > a[href="#content-3"] {
   color: $color-blue;
 }
 
 
-.tabs--nojs .tabs__content--2:target ~ .tabs__links > a[href="#content-1"]:not(:hover),
-.tabs--nojs .tabs__content--3:target ~ .tabs__links > a[href="#content-1"]:not(:hover) {
+.tabs--nojs .tabs__content--2:target ~ .tabs__links > .tabs__link-item > a[href="#content-1"]:not(:hover),
+.tabs--nojs .tabs__content--3:target ~ .tabs__links > .tabs__link-item > a[href="#content-1"]:not(:hover) {
   cursor: pointer;
 
   &::before {
@@ -269,8 +300,8 @@
   }
 }
 
-.tabs--nojs .tabs__content--2:target ~ .tabs__links > a[href="#content-1"]:hover,
-.tabs--nojs .tabs__content--3:target ~ .tabs__links > a[href="#content-1"]:hover {
+.tabs--nojs .tabs__content--2:target ~ .tabs__links > .tabs__link-item > a[href="#content-1"]:hover,
+.tabs--nojs .tabs__content--3:target ~ .tabs__links > .tabs__link-item > a[href="#content-1"]:hover {
   color: $color-dark-pink;
   cursor: pointer;
 
@@ -280,35 +311,26 @@
 }
 
 .tabs--nojs > .tabs__content:target {
-  position: static;
-  transform: scale(1);
-  opacity: 1;
+  display: grid;
+  animation: visibleCard 0.7s ease-in-out;
 }
 
 .tabs--nojs .tabs__content--1 {
-  position: static;
-  transform: scale(1);
-  opacity: 1;
+  display: grid;
 }
 
 .tabs--nojs .tabs__content--2:target ~ .tabs__content--1,
 .tabs--nojs .tabs__content--3:target ~ .tabs__content--1 {
-  position: absolute;
-  transform: scale(0);
-  opacity: 0;
+  display: none;
+  animation: visibleCard 0.7s ease-in-out;
 }
 
 .tabs__content {
-  position: absolute;
-  bottom: 0;
-  transform: scale(0);
+  display: none;
   order: 1;
-  opacity: 0;
-  transition: all 0.5s ease 0s;
+  animation: visibleCard 0.7s ease-in-out;
 }
 
 .tabs__content--active {
-  position: static;
-  transform: scale(1);
-  opacity: 1;
+  display: grid;
 }

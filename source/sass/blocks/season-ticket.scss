@@ -14,7 +14,7 @@
   &::after {
     content: "";
     position: absolute;
-    bottom: -100px;
+    bottom: -125px;
     right: 0;
     width: 287px;
     height: 494px;
@@ -22,15 +22,17 @@
 
     @include retinaD {
       background-image: url("../img/prices-bg@2x.png");
-      background-size: 0 0;
+      background-size: 287px 494px;
     }
 
     @include vp-1200 {
       background-image: url("../img/prices-bg-tablet.png");
+      width: 347px;
+      height: 444px;
 
       @include retina {
         background-image: url("../img/prices-bg-tablet@2x.png");
-        background-size: 0 0;
+        background-size: 347px 444px;
       }
     }
 

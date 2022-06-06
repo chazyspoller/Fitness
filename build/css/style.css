@@ -444,7 +444,7 @@ html {
   font-size: 16px;
   line-height: 24px;
   font-family: "Roboto Condensed", "Arial", sans-serif;
-  color: #ffffff;
+  color: #102654;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -457,7 +457,7 @@ body {
 }
 
 a {
-  color: rgba(16, 38, 84, 0.5);
+  color: #102654;
   text-decoration: none;
 }
 
@@ -1010,7 +1010,7 @@ body main {
 .season-ticket::after {
   content: "";
   position: absolute;
-  bottom: -100px;
+  bottom: -125px;
   right: 0;
   width: 287px;
   height: 494px;
@@ -1073,7 +1073,7 @@ body main {
   min-height: 448px;
   background-color: #ffffff;
   text-align: center;
-  border: 7px solid;
+  border: 7px solid transparent;
 }
 
 .tabs__content-item h3 {
@@ -1136,6 +1136,9 @@ body main {
 }
 
 .tabs__links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1149,7 +1152,29 @@ body main {
   margin-bottom: 40px;
 }
 
-.tabs__links a {
+.tabs__link-item {
+  position: relative;
+}
+
+.tabs__link-item:not(:last-of-type) {
+  margin-right: 46px;
+}
+
+.tabs__link-item::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: -46px;
+  height: 2px;
+  background-color: rgba(120, 120, 120, 0.2);
+}
+
+.tabs__link-item:last-of-type::after {
+  right: 0;
+}
+
+.tabs__link-item a {
   display: inline-block;
   vertical-align: middle;
   font: 400 1.25em/1em "Roboto Condensed", "Arial", sans-serif;
@@ -1160,32 +1185,15 @@ body main {
   -webkit-transition: color 0.3s ease 0s;
   -o-transition: color 0.3s ease 0s;
   transition: color 0.3s ease 0s;
+  color: rgba(16, 38, 84, 0.5);
 }
 
-.tabs__links a:not(:last-of-type) {
-  margin-right: 46px;
-}
-
-.tabs__links a:last-of-type::after {
-  right: 0;
-}
-
-.tabs__links a::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  right: -46px;
-  height: 2px;
-  background-color: rgba(120, 120, 120, 0.2);
-}
-
-.tabs__link--active {
+.tabs__link-item--active a {
   color: #102654;
   cursor: default;
 }
 
-.tabs__link--active::before {
+.tabs__link-item--active a::before {
   content: "";
   position: absolute;
   bottom: -2px;
@@ -1195,15 +1203,15 @@ body main {
   background-color: #d10a42;
 }
 
-.tabs--nojs > .tabs__links > a[href="#content-1"],
-.tabs--nojs .tabs__content--2:target ~ .tabs__links > a[href="#content-2"],
-.tabs--nojs .tabs__content--3:target ~ .tabs__links > a[href="#content-3"] {
+.tabs--nojs > .tabs__links > .tabs__link-item > a[href="#content-1"],
+.tabs--nojs .tabs__content--2:target ~ .tabs__links > .tabs__link-item > a[href="#content-2"],
+.tabs--nojs .tabs__content--3:target ~ .tabs__links > .tabs__link-item > a[href="#content-3"] {
   cursor: default;
 }
 
-.tabs--nojs > .tabs__links > a[href="#content-1"]::before,
-.tabs--nojs .tabs__content--2:target ~ .tabs__links > a[href="#content-2"]::before,
-.tabs--nojs .tabs__content--3:target ~ .tabs__links > a[href="#content-3"]::before {
+.tabs--nojs > .tabs__links > .tabs__link-item > a[href="#content-1"]::before,
+.tabs--nojs .tabs__content--2:target ~ .tabs__links > .tabs__link-item > a[href="#content-2"]::before,
+.tabs--nojs .tabs__content--3:target ~ .tabs__links > .tabs__link-item > a[href="#content-3"]::before {
   content: "";
   position: absolute;
   bottom: -2px;
@@ -1213,79 +1221,235 @@ body main {
   background-color: #d10a42;
 }
 
-.tabs--nojs .tabs__content--1:target ~ .tabs__links > a[href="#content-1"],
-.tabs--nojs .tabs__content--2:target ~ .tabs__links > a[href="#content-2"],
-.tabs--nojs .tabs__content--3:target ~ .tabs__links > a[href="#content-3"] {
+@-webkit-keyframes visibleCard {
+  0% {
+    display: grid;
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes visibleCard {
+  0% {
+    display: -ms-grid;
+    display: grid;
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.tabs--nojs .tabs__content--1:target ~ .tabs__links > .tabs__link-item > a[href="#content-1"],
+.tabs--nojs .tabs__content--2:target ~ .tabs__links > .tabs__link-item > a[href="#content-2"],
+.tabs--nojs .tabs__content--3:target ~ .tabs__links > .tabs__link-item > a[href="#content-3"] {
   color: #102654;
 }
 
-.tabs--nojs .tabs__content--2:target ~ .tabs__links > a[href="#content-1"]:not(:hover),
-.tabs--nojs .tabs__content--3:target ~ .tabs__links > a[href="#content-1"]:not(:hover) {
+.tabs--nojs .tabs__content--2:target ~ .tabs__links > .tabs__link-item > a[href="#content-1"]:not(:hover),
+.tabs--nojs .tabs__content--3:target ~ .tabs__links > .tabs__link-item > a[href="#content-1"]:not(:hover) {
   cursor: pointer;
 }
 
-.tabs--nojs .tabs__content--2:target ~ .tabs__links > a[href="#content-1"]:not(:hover)::before,
-.tabs--nojs .tabs__content--3:target ~ .tabs__links > a[href="#content-1"]:not(:hover)::before {
+.tabs--nojs .tabs__content--2:target ~ .tabs__links > .tabs__link-item > a[href="#content-1"]:not(:hover)::before,
+.tabs--nojs .tabs__content--3:target ~ .tabs__links > .tabs__link-item > a[href="#content-1"]:not(:hover)::before {
   display: none;
 }
 
-.tabs--nojs .tabs__content--2:target ~ .tabs__links > a[href="#content-1"]:hover,
-.tabs--nojs .tabs__content--3:target ~ .tabs__links > a[href="#content-1"]:hover {
+.tabs--nojs .tabs__content--2:target ~ .tabs__links > .tabs__link-item > a[href="#content-1"]:hover,
+.tabs--nojs .tabs__content--3:target ~ .tabs__links > .tabs__link-item > a[href="#content-1"]:hover {
   color: #d10a42;
   cursor: pointer;
 }
 
-.tabs--nojs .tabs__content--2:target ~ .tabs__links > a[href="#content-1"]:hover::before,
-.tabs--nojs .tabs__content--3:target ~ .tabs__links > a[href="#content-1"]:hover::before {
+.tabs--nojs .tabs__content--2:target ~ .tabs__links > .tabs__link-item > a[href="#content-1"]:hover::before,
+.tabs--nojs .tabs__content--3:target ~ .tabs__links > .tabs__link-item > a[href="#content-1"]:hover::before {
   display: none;
 }
 
 .tabs--nojs > .tabs__content:target {
-  position: static;
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-  opacity: 1;
+  display: -ms-grid;
+  display: grid;
+  -webkit-animation: visibleCard 0.7s ease-in-out;
+  animation: visibleCard 0.7s ease-in-out;
 }
 
 .tabs--nojs .tabs__content--1 {
-  position: static;
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-  opacity: 1;
+  display: -ms-grid;
+  display: grid;
 }
 
 .tabs--nojs .tabs__content--2:target ~ .tabs__content--1,
 .tabs--nojs .tabs__content--3:target ~ .tabs__content--1 {
-  position: absolute;
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-  opacity: 0;
+  display: none;
+  -webkit-animation: visibleCard 0.7s ease-in-out;
+  animation: visibleCard 0.7s ease-in-out;
 }
 
 .tabs__content {
-  position: absolute;
-  bottom: 0;
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
+  display: none;
   -webkit-box-ordinal-group: 2;
   -ms-flex-order: 1;
   order: 1;
-  opacity: 0;
-  -webkit-transition: all 0.5s ease 0s;
-  -o-transition: all 0.5s ease 0s;
-  transition: all 0.5s ease 0s;
+  -webkit-animation: visibleCard 0.7s ease-in-out;
+  animation: visibleCard 0.7s ease-in-out;
 }
 
 .tabs__content--active {
-  position: static;
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-  opacity: 1;
+  display: -ms-grid;
+  display: grid;
+}
+
+.promo {
+  padding: 120px 0;
+}
+
+.promo__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.promo__info {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 43.1%;
+  flex: 1 1 43.1%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 450px;
+  max-width: 50%;
+  min-height: 500px;
+  padding: 87px 6.7%;
+  background-color: #ed0233;
+  color: #ffffff;
+}
+
+.promo__info a {
+  display: block;
+  font: 700 0.75em/1em "Roboto Condensed", "Arial", sans-serif;
+  letter-spacing: 0.05em;
+  padding: 25px;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-align: center;
+  border: 4px solid #ffffff;
+  margin-top: auto;
+}
+
+.promo__info a:active {
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+}
+
+.promo__info-titles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.promo__info-titles h3 {
+  margin: 0;
+  padding: 0;
+  max-width: 65%;
+  font: 700 5.63em/1em "Bebas Neue", "Arial", sans-serif;
+  letter-spacing: 0.03em;
+  margin-top: -8px;
+  word-wrap: break-word;
+}
+
+.promo__info > p {
+  margin: 0;
+  padding: 0;
+  font: 400 1.13em/1em "Roboto Condensed", "Arial", sans-serif;
+  margin-bottom: 15px;
+}
+
+.promo__datetime:not(:last-of-type) {
+  margin-bottom: 20px;
+}
+
+.promo__datetime p {
+  margin: 0;
+  padding: 0;
+}
+
+.promo__datetime p:first-of-type {
+  margin: 0;
+  padding: 0;
+  font: 400 1.13em/1em "Roboto Condensed", "Arial", sans-serif;
+  margin-bottom: 8px;
+}
+
+.promo__datetime p:last-of-type {
+  display: inline-block;
+  vertical-align: middle;
+  padding-top: 4px;
+  border-top: 1px solid #ffffff;
+  font: 700 2.5em/1em "Roboto Condensed", "Arial", sans-serif;
+}
+
+.promo__date {
+  margin: 0;
+  padding: 0;
+}
+
+.promo__date time {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: -webkit-max-content 5px -webkit-max-content;
+  -ms-grid-columns: max-content 5px max-content;
+  grid-template-columns: -webkit-max-content -webkit-max-content;
+  grid-template-columns: max-content max-content;
+  -webkit-column-gap: 5px;
+  -moz-column-gap: 5px;
+  column-gap: 5px;
+  grid-template-areas: "number month" "number year";
+}
+
+.promo__date span:first-of-type {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: number;
+}
+
+.promo__date span:not(:first-of-type) {
+  font: 400 0.35em/1em "Roboto Condensed", "Arial", sans-serif;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+}
+
+.promo__image {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 56.9%;
+  flex: 1 1 56.9%;
+  min-height: 500px;
+  position: relative;
+}
+
+.promo__image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 /* @media (hover: hover), screen and (min-width: 0\0) {
@@ -1303,7 +1467,7 @@ body main {
   }
 
   .header__titles a:hover,
-  .header__titles a:focus {
+  .header__titles a:focus-visible {
     background-color: #ffffff;
     color: #102654;
   }
@@ -1330,10 +1494,22 @@ body main {
     background: #ed0233;
   }
 
-  .tabs__links a:hover,
-  .tabs__links a:focus {
+  .tabs__link-item a:hover,
+  .tabs__link-item a:focus-visible {
     outline: none;
     color: #d10a42;
+  }
+
+  .tabs__link-item--active a:hover,
+  .tabs__link-item--active a:focus-visible {
+    outline: none;
+    color: #102654;
+  }
+
+  .promo__info a:hover,
+  .promo__info a:focus-visible {
+    background-color: #ffffff;
+    color: #102654;
   }
 }
 
@@ -1345,7 +1521,7 @@ body main {
 
   .season-ticket::after {
     background-image: url("../img/prices-bg@2x.png");
-    background-size: 0 0;
+    background-size: 287px 494px;
   }
 }
 
@@ -1494,6 +1670,8 @@ body main {
 
   .season-ticket::after {
     background-image: url("../img/prices-bg-tablet.png");
+    width: 347px;
+    height: 444px;
   }
 
   .season-ticket h2 {
@@ -1524,16 +1702,73 @@ body main {
     margin-bottom: 45px;
   }
 
-  .tabs__links a {
-    font: 400 1.13em/1em "Roboto Condensed", "Arial", sans-serif;
-  }
-
-  .tabs__links a:not(:last-of-type) {
+  .tabs__link-item:not(:last-of-type) {
     margin-right: 54px;
   }
 
-  .tabs__links a::after {
+  .tabs__link-item::after {
     right: -54px;
+  }
+
+  .tabs__link-item a {
+    font: 400 1.13em/1em "Roboto Condensed", "Arial", sans-serif;
+  }
+
+  .promo {
+    padding: 100px 0;
+  }
+
+  .promo__info {
+    min-width: auto;
+    padding: 51px 45px;
+    min-height: 292px;
+  }
+
+  .promo__info a {
+    font: 700 0.63em/1em "Roboto Condensed", "Arial", sans-serif;
+    padding: 16px;
+    border-width: 2px;
+  }
+
+  .promo__info-titles {
+    margin-bottom: 15px;
+  }
+
+  .promo__info-titles h3 {
+    margin-top: -4px;
+    font: 700 3.25em/1em "Bebas Neue", "Arial", sans-serif;
+  }
+
+  .promo__info > p {
+    font: 400 0.75em/1em "Roboto Condensed", "Arial", sans-serif;
+  }
+
+  .promo__datetime:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+
+  .promo__datetime p:first-of-type {
+    font: 400 0.75em/1em "Roboto Condensed", "Arial", sans-serif;
+    margin-bottom: 4px;
+  }
+
+  .promo__datetime p:last-of-type {
+    font: 700 1.5em/1em "Roboto Condensed", "Arial", sans-serif;
+    padding-top: 2px;
+  }
+
+  .promo__date time {
+    -webkit-column-gap: 5px;
+    -moz-column-gap: 5px;
+    column-gap: 5px;
+  }
+
+  .promo__date span:not(:first-of-type) {
+    font: 400 0.42em/1em "Roboto Condensed", "Arial", sans-serif;
+  }
+
+  .promo__image {
+    min-height: 292px;
   }
 }
 
@@ -1545,7 +1780,7 @@ body main {
 
   .season-ticket::after {
     background-image: url("../img/prices-bg-tablet@2x.png");
-    background-size: 0 0;
+    background-size: 347px 444px;
   }
 }
 
@@ -1761,16 +1996,27 @@ body main {
     max-width: 100%;
   }
 
-  .tabs__links a {
-    font: 400 1em/1em "Roboto Condensed", "Arial", sans-serif;
-  }
-
-  .tabs__links a:not(:last-of-type) {
+  .tabs__link-item:not(:last-of-type) {
     margin-right: 45px;
   }
 
-  .tabs__links a::after {
+  .tabs__link-item::after {
     right: -45px;
+  }
+
+  .tabs__link-item a {
+    font: 400 1em/1em "Roboto Condensed", "Arial", sans-serif;
+  }
+
+  .promo {
+    padding: 70px 15px;
+  }
+
+  .promo__wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
 }
 
@@ -1785,15 +2031,15 @@ body main {
 }
 
 @media (hover: hover), screen {
-  .tabs__content > li:hover,
-  .tabs__content li:focus-within {
+  .tabs__content-item:hover,
+  .tabs__content-item:focus-within {
     border: 7px solid;
     border-image-slice: 1;
     border-image-source: linear-gradient(148.82deg, #d10a42 0.85%, #00359f 100%);
   }
 
-  .tabs__content > li:hover a,
-  .tabs__content a:focus {
+  .tabs__content-item:hover a,
+  .tabs__content-item a:focus {
     background: -o-linear-gradient(301.18deg, #d10a42 0.85%, #00359f 100%);
     background: linear-gradient(148.82deg, #d10a42 0.85%, #00359f 100%);
     color: #ffffff;
