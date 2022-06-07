@@ -101,7 +101,9 @@
       font: 400 1em/1em $ff-default;
     }
 
-    @media (hover: hover), screen and (min-width: $vp-1200) {
+    @media (hover: hover),
+    screen and (min-width: $vp-1200) {
+
       &:hover,
       &:focus {
         opacity: 0.6;
@@ -139,7 +141,9 @@
     line-height: 0;
     transition: all 0.3s ease 0s;
 
-    @media (hover: hover), screen and (min-width: $vp-1200) {
+    @media (hover: hover),
+    screen and (min-width: $vp-1200) {
+
       &:hover,
       &:focus {
         opacity: 0.6;

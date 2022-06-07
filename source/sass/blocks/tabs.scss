@@ -8,6 +8,10 @@
 }
 
 .tabs__content {
+  display: none;
+  order: 1;
+  animation: visibleCard 0.7s ease-in-out;
+
   @include reset-margins;
   list-style: none;
   width: 100%;
@@ -47,7 +51,9 @@
     }
   }
 
-  @media (hover: hover), screen {
+  @media (hover: hover),
+  screen {
+
     &:hover,
     &:focus-within {
       border: 7px solid;
@@ -55,7 +61,7 @@
       border-image-source: $prices-gradient;
     }
   }
-  
+
   h3 {
     @include reset-margins;
     font: 700 1.63em/1.2em $ff-default;
@@ -120,7 +126,9 @@
   }
 }
 
-@media (hover: hover), screen {
+@media (hover: hover),
+screen {
+
   .tabs__content-item:hover a,
   .tabs__content-item a:focus {
     background: $prices-gradient;
@@ -222,7 +230,9 @@
       font: 400 1em/1em $ff-default;
     }
 
-    @media (hover: hover), screen and (min-width: $vp-1200) {
+    @media (hover: hover),
+    screen and (min-width: $vp-1200) {
+
       &:hover,
       &:focus-visible {
         outline: none;
@@ -247,9 +257,11 @@
       background-color: $color-dark-pink;
     }
 
-    @media (hover: hover), screen and (min-width: $vp-1200) {
+    @media (hover: hover),
+    screen and (min-width: $vp-1200) {
+
       &:hover,
-      &:focus-visible  {
+      &:focus-visible {
         outline: none;
         color: $color-blue;
       }
@@ -257,9 +269,9 @@
   }
 }
 
-.tabs--nojs > .tabs__links > .tabs__link-item > a[href="#content-1"],
-.tabs--nojs .tabs__content--2:target ~ .tabs__links > .tabs__link-item > a[href="#content-2"],
-.tabs--nojs .tabs__content--3:target ~ .tabs__links > .tabs__link-item > a[href="#content-3"] {
+.tabs--nojs>.tabs__links>.tabs__link-item>a[href="#content-1"],
+.tabs--nojs .tabs__content--2:target~.tabs__links>.tabs__link-item>a[href="#content-2"],
+.tabs--nojs .tabs__content--3:target~.tabs__links>.tabs__link-item>a[href="#content-3"] {
   cursor: default;
 
   &::before {
@@ -284,15 +296,15 @@
   }
 }
 
-.tabs--nojs .tabs__content--1:target ~ .tabs__links > .tabs__link-item > a[href="#content-1"],
-.tabs--nojs .tabs__content--2:target ~ .tabs__links > .tabs__link-item > a[href="#content-2"],
-.tabs--nojs .tabs__content--3:target ~ .tabs__links > .tabs__link-item > a[href="#content-3"] {
+.tabs--nojs .tabs__content--1:target~.tabs__links>.tabs__link-item>a[href="#content-1"],
+.tabs--nojs .tabs__content--2:target~.tabs__links>.tabs__link-item>a[href="#content-2"],
+.tabs--nojs .tabs__content--3:target~.tabs__links>.tabs__link-item>a[href="#content-3"] {
   color: $color-blue;
 }
 
 
-.tabs--nojs .tabs__content--2:target ~ .tabs__links > .tabs__link-item > a[href="#content-1"]:not(:hover),
-.tabs--nojs .tabs__content--3:target ~ .tabs__links > .tabs__link-item > a[href="#content-1"]:not(:hover) {
+.tabs--nojs .tabs__content--2:target~.tabs__links>.tabs__link-item>a[href="#content-1"]:not(:hover),
+.tabs--nojs .tabs__content--3:target~.tabs__links>.tabs__link-item>a[href="#content-1"]:not(:hover) {
   cursor: pointer;
 
   &::before {
@@ -300,8 +312,8 @@
   }
 }
 
-.tabs--nojs .tabs__content--2:target ~ .tabs__links > .tabs__link-item > a[href="#content-1"]:hover,
-.tabs--nojs .tabs__content--3:target ~ .tabs__links > .tabs__link-item > a[href="#content-1"]:hover {
+.tabs--nojs .tabs__content--2:target~.tabs__links>.tabs__link-item>a[href="#content-1"]:hover,
+.tabs--nojs .tabs__content--3:target~.tabs__links>.tabs__link-item>a[href="#content-1"]:hover {
   color: $color-dark-pink;
   cursor: pointer;
 
@@ -310,7 +322,7 @@
   }
 }
 
-.tabs--nojs > .tabs__content:target {
+.tabs--nojs>.tabs__content:target {
   display: grid;
   animation: visibleCard 0.7s ease-in-out;
 }
@@ -319,15 +331,9 @@
   display: grid;
 }
 
-.tabs--nojs .tabs__content--2:target ~ .tabs__content--1,
-.tabs--nojs .tabs__content--3:target ~ .tabs__content--1 {
+.tabs--nojs .tabs__content--2:target~.tabs__content--1,
+.tabs--nojs .tabs__content--3:target~.tabs__content--1 {
   display: none;
-  animation: visibleCard 0.7s ease-in-out;
-}
-
-.tabs__content {
-  display: none;
-  order: 1;
   animation: visibleCard 0.7s ease-in-out;
 }
 
