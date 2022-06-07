@@ -35,6 +35,10 @@
     min-height: 292px;
   }
 
+  @include vp-768 {
+    max-width: 100%;
+  }
+
   a {
     display: block;
     font: 700 0.75em/1em $ff-default;
@@ -45,6 +49,7 @@
     text-align: center;
     border: 4px solid $color-default-white;
     margin-top: auto;
+    transition: all 0.3s ease 0s;
 
     @include vp-1200 {
       font: 700 0.63em/1em $ff-default;
@@ -52,7 +57,9 @@
       border-width: 2px;
     }
 
-    @media (hover: hover), screen and (min-width: $vp-1200) {
+    @media (hover: hover),
+    screen and (min-width: $vp-1200) {
+
       &:hover,
       &:focus-visible {
         background-color: $color-default-white;
@@ -73,7 +80,7 @@
 
   @include vp-1200 {
     margin-bottom: 15px;
-  }  
+  }
 
   h3 {
     @include reset-margins;
@@ -90,7 +97,7 @@
   }
 }
 
-.promo__info > p {
+.promo__info>p {
   @include reset-margins;
   font: 400 1.13em/1em $ff-default;
   margin-bottom: 15px;
@@ -112,7 +119,7 @@
   p {
     @include reset-margins;
 
-    &:first-of-type{
+    &:first-of-type {
       @include reset-margins;
       font: 400 1.13em/1em $ff-default;
       margin-bottom: 8px;

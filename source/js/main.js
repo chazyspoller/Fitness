@@ -2,6 +2,7 @@ import './modules/modals/advantages';
 import './modules/modals/link-scroll';
 import './modules/modals/yb-video';
 import './modules/modals/season-tickets';
+import './modules/modals/trainers';
 
 // ---------------------------------
 
