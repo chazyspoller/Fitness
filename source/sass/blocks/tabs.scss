@@ -8,14 +8,12 @@
 }
 
 .tabs__content {
-  display: none;
-  order: 1;
-  animation: visibleCard 0.7s ease-in-out;
-
   @include reset-margins;
   list-style: none;
   width: 100%;
-  display: grid;
+  display: none;
+  order: 1;
+  animation: visibleCard 0.7s ease-in-out;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px 4%;
   transition: all 0.3s ease 0s;
@@ -29,6 +27,10 @@
     width: 100%;
     gap: 35px;
   }
+}
+
+.tabs__content--active {
+  display: grid;
 }
 
 .tabs__content-item {
@@ -335,8 +337,4 @@ screen {
 .tabs--nojs .tabs__content--3:target~.tabs__content--1 {
   display: none;
   animation: visibleCard 0.7s ease-in-out;
-}
-
-.tabs__content--active {
-  display: grid;
 }

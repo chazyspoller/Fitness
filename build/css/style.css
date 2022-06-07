@@ -1343,18 +1343,16 @@ body {
   z-index: 1; }
 
 .tabs__content {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
   display: none;
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
   -webkit-animation: visibleCard 0.7s ease-in-out;
           animation: visibleCard 0.7s ease-in-out;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  width: 100%;
-  display: -ms-grid;
-  display: grid;
   -ms-grid-columns: (1fr)[3];
   grid-template-columns: repeat(3, 1fr);
   gap: 40px 4%;
@@ -1370,6 +1368,10 @@ body {
     .tabs__content {
       width: 100%;
       gap: 35px; } }
+
+.tabs__content--active {
+  display: -ms-grid;
+  display: grid; }
 
 .tabs__content-item {
   display: -webkit-box;
@@ -1625,10 +1627,6 @@ body {
   display: none;
   -webkit-animation: visibleCard 0.7s ease-in-out;
           animation: visibleCard 0.7s ease-in-out; }
-
-.tabs__content--active {
-  display: -ms-grid;
-  display: grid; }
 
 .promo {
   padding: 120px 0; }
