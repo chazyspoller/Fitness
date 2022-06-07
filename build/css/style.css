@@ -611,6 +611,11 @@ template {
   scroll-snap-align: center center;
 }
 
+.swiper-button-disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
 @font-face {
   font-style: normal;
   font-weight: 700;
@@ -821,6 +826,43 @@ body main {
   height: 15px;
   border: 1px solid #ffffff;
   border-radius: 3px;
+}
+
+.swip-button {
+  width: 50px;
+  height: 32px;
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.swip-button::before,
+.swip-button::after {
+  content: "";
+  position: absolute;
+  left: 25%;
+  width: 23px;
+  height: 1px;
+  background-color: #afafaf;
+}
+
+.swip-button::before {
+  top: 25%;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.swip-button::after {
+  left: 25.5%;
+  bottom: 24.5%;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 .header {
@@ -1805,43 +1847,6 @@ body main {
   border-radius: 50%;
 }
 
-.trainers__button {
-  width: 50px;
-  height: 32px;
-  position: absolute;
-  z-index: 5;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  cursor: pointer;
-}
-
-.trainers__button::before,
-.trainers__button::after {
-  content: "";
-  position: absolute;
-  left: 25%;
-  width: 23px;
-  height: 1px;
-  background-color: #afafaf;
-}
-
-.trainers__button::before {
-  top: 25%;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-.trainers__button::after {
-  left: 25.5%;
-  bottom: 24.5%;
-  -webkit-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
-
 .trainers__button--prev {
   left: 25px;
 }
@@ -1863,6 +1868,109 @@ body main {
 }
 
 .trainers__button--nojs {
+  display: none;
+}
+
+.feedbacks {
+  padding: 0 0 120px 0;
+  position: relative;
+}
+
+.feedbacks h2 {
+  margin: 0;
+  padding: 0;
+  font: 700 3.07em/1em "Bebas Neue", "Arial", sans-serif;
+  letter-spacing: 0.03em;
+  text-align: center;
+  margin-bottom: 62px;
+  text-transform: uppercase;
+}
+
+.feedbacks__list {
+  max-width: 55%;
+}
+
+.feedbacks__wrap {
+  background-color: #ffffff;
+}
+
+.feedbacks__wrap--nojs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.feedbacks__item {
+  margin: 0;
+  padding: 0;
+  padding: 62px;
+  background-color: #1c3374;
+  -webkit-box-shadow: 0px 0px 40px rgba(28, 51, 116, 0.2);
+  box-shadow: 0px 0px 40px rgba(28, 51, 116, 0.2);
+  color: #ffffff;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: -webkit-min-content 1fr;
+  -ms-grid-columns: min-content 1fr;
+  grid-template-columns: -webkit-min-content 1fr;
+  grid-template-columns: min-content 1fr;
+  gap: 25px 28px;
+}
+
+.feedbacks__item--nojs:not(:last-of-type) {
+  margin-bottom: 20px;
+}
+
+.feedbacks__item cite {
+  font: 700 1.25em/1em "Roboto Condensed", "Arial", sans-serif;
+}
+
+.feedbacks__item p {
+  margin: 0;
+  padding: 0;
+  font: 400 1em/1.2em "Roboto Condensed", "Arial", sans-serif;
+}
+
+.feedbacks__image {
+  width: 80px;
+  height: 80px;
+  -ms-grid-row-span: 2;
+  grid-row: span 2;
+}
+
+.feedbacks__image img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.feedbacks__button--prev {
+  left: 20%;
+}
+
+.feedbacks__button--prev::before {
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.feedbacks__button--prev::after {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.feedbacks__button--next {
+  right: 20%;
+}
+
+.feedbacks__button--nojs {
   display: none;
 }
 
@@ -2251,6 +2359,39 @@ body main {
   .trainers__item--nojs ul {
     opacity: 1;
   }
+
+  .trainers__button--prev {
+    left: 45px;
+  }
+
+  .trainers__button--next {
+    right: 45px;
+  }
+
+  .feedbacks {
+    padding: 0 56px 100px 56px;
+  }
+
+  .feedbacks h2 {
+    font: 700 2.63em/1em "Bebas Neue", "Arial", sans-serif;
+    margin-bottom: 50px;
+  }
+
+  .feedbacks__list {
+    max-width: 100%;
+  }
+
+  .feedbacks__item {
+    padding: 62px 65px;
+  }
+
+  .feedbacks__button--prev {
+    left: 45px;
+  }
+
+  .feedbacks__button--next {
+    right: 45px;
+  }
 }
 
 @media (max-width: 1199px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 1199px) and (-o-min-device-pixel-ratio: 3/2), (max-width: 1199px) and (min-resolution: 144dpi), (max-width: 1199px) and (min-resolution: 1.5dppx) {
@@ -2274,6 +2415,16 @@ body main {
     width: 85%;
     margin-left: 4px;
     margin-bottom: 12px;
+  }
+
+  .swip-button {
+    width: 30px;
+    height: 19px;
+  }
+
+  .swip-button::before,
+  .swip-button::after {
+    width: 13px;
   }
 
   .header {
@@ -2529,21 +2680,60 @@ body main {
     padding-left: 5%;
   }
 
-  .trainers__button {
-    width: 30px;
-    height: 19px;
-  }
-
-  .trainers__button::before,
-  .trainers__button::after {
-    width: 13px;
-  }
-
   .trainers__button--prev {
     left: 5px;
   }
 
   .trainers__button--next {
+    right: 5px;
+  }
+
+  .feedbacks {
+    padding: 0 15px 70px 15px;
+  }
+
+  .feedbacks h2 {
+    font: 700 2em/1em "Bebas Neue", "Arial", sans-serif;
+  }
+
+  .feedbacks > .container {
+    padding: 0 32px;
+  }
+
+  .feedbacks__item {
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    padding: 40px 25px;
+    gap: 20px 15px;
+  }
+
+  .feedbacks__item cite {
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+  }
+
+  .feedbacks__item p {
+    -ms-grid-column-span: 2;
+    grid-column: span 2;
+    text-align: center;
+  }
+
+  .feedbacks__image {
+    -ms-grid-row-span: 1;
+    grid-row: span 1;
+    -ms-grid-column-align: end;
+    justify-self: end;
+  }
+
+  .feedbacks__button--prev {
+    left: 5px;
+  }
+
+  .feedbacks__button--next {
     right: 5px;
   }
 }

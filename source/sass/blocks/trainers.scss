@@ -204,44 +204,6 @@
 }
 
 .trainers__button {
-  width: 50px;
-  height: 32px;
-  position: absolute;
-  z-index: 5;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-
-  @include vp-768 {
-    width: 30px;
-    height: 19px;
-  }
-
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    left: 25%;
-    width: 23px;
-    height: 1px;
-    background-color: $color-arrows;
-
-    @include vp-768 {
-      width: 13px;
-    }
-  }
-
-  &::before {
-    top: 25%;
-    transform: rotate(45deg);
-  }
-
-  &::after {
-    left: 25.5%;
-    bottom: 24.5%;
-    transform: rotate(-45deg);
-  }
-
   &--prev {
     left: 25px;
 
@@ -253,6 +215,10 @@
       transform: rotate(45deg);
     }
 
+    @include vp-1200 {
+      left: 45px;
+    }
+
     @include vp-768 {
       left: 5px;
     }
@@ -260,6 +226,10 @@
 
   &--next {
     right: 25px;
+
+    @include vp-1200 {
+      right: 45px;
+    }
 
     @include vp-768 {
       right: 5px;

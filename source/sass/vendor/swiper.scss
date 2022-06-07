@@ -202,3 +202,8 @@ $themeColor: #007aff !default;
     scroll-snap-align: center center;
   }
 }
+
+.swiper-button-disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}

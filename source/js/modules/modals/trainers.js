@@ -69,4 +69,3 @@ const activateTrainersSwiper = () => {
 };
 
 activateTrainersSwiper();
-

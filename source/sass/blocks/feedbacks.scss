@@ -1,0 +1,155 @@
+.feedbacks {
+  padding: 0 0 120px 0;
+  position: relative;
+
+  @include vp-1200 {
+    padding: 0 56px 100px 56px;
+  }
+
+  @include vp-768 {
+    padding: 0 15px 70px 15px;
+  }
+
+  h2 {
+    @include reset-margins;
+    font: 700 3.07em/1em $ff-titles;
+    letter-spacing: 0.03em;
+    text-align: center;
+    margin-bottom: 62px;
+    text-transform: uppercase;
+
+    @include vp-1200 {
+      font: 700 2.63em/1em $ff-titles;
+      margin-bottom: 50px;
+    }
+
+    @include vp-768 {
+      font: 700 2em/1em $ff-titles;
+    }
+  }
+}
+
+.feedbacks>.container {
+  @include vp-768 {
+    padding: 0 32px;
+  }
+}
+
+.feedbacks__list {
+  max-width: 55%;
+
+  @include vp-1200 {
+    max-width: 100%;
+  }
+}
+
+.feedbacks__wrap {
+  background-color: $color-default-white;
+}
+
+.feedbacks__wrap--nojs {
+  display: flex;
+  flex-direction: column;
+}
+
+.feedbacks__item {
+  @include reset-margins;
+  padding: 62px;
+  background-color: $color-feedback;
+  box-shadow: 0px 0px 40px $color-feedback-shadow;
+  color: $color-default-white;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  gap: 25px 28px;
+
+  @include vp-1200 {
+    padding: 62px 65px;
+  }
+
+  @include vp-768 {
+    grid-template-columns: 1fr 1fr;
+    padding: 40px 25px;
+    gap: 20px 15px;
+  }
+
+  &--nojs {
+    &:not(:last-of-type) {
+      margin-bottom: 20px;
+    }
+  }
+
+  cite {
+    font: 700 1.25em/1em $ff-default;
+
+    @include vp-768 {
+      width: min-content;
+      align-self: center;
+    }
+  }
+
+  p {
+    @include reset-margins;
+    font: 400 1em/1.2em $ff-default;
+
+    @include vp-768 {
+      grid-column: span 2;
+      text-align: center;
+    }
+  }
+}
+
+.feedbacks__image {
+  width: 80px;
+  height: 80px;
+  grid-row: span 2;
+
+  @include vp-768 {
+    grid-row: span 1;
+    justify-self: end;
+  }
+
+  img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
+.feedbacks__button {
+  &--prev {
+    left: 20%;
+
+    &::before {
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      transform: rotate(45deg);
+    }
+
+    @include vp-1200 {
+      left: 45px;
+    }
+
+    @include vp-768 {
+      left: 5px;
+    }
+  }
+
+  &--next {
+    right: 20%;
+
+    @include vp-1200 {
+      right: 45px;
+    }
+
+    @include vp-768 {
+      right: 5px;
+    }
+  }
+}
+
+.feedbacks__button--nojs {
+  display: none;
+}
