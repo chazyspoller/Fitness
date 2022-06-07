@@ -26,7 +26,8 @@ const generateURL = (id) => {
 };
 
 const setupVideo = (video) => {
-  let link = video.querySelector('.yb-video__link');
+  let linkBox = video.querySelector('.yb-video__link');
+  let link = linkBox ? linkBox.querySelector('a') : null;
 
   if (link) {
     let id = parseMediaURL(link);
@@ -34,7 +35,7 @@ const setupVideo = (video) => {
     video.addEventListener('click', () => {
       let iframe = createIframe(id);
 
-      link.remove();
+      linkBox.remove();
       video.appendChild(iframe);
     });
 

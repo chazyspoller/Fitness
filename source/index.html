@@ -84,7 +84,7 @@
               height="401">
           </picture>
           <div class="gym__yb-video yb-video">
-            <a class="yb-video__link" href="https://www.youtube.com/watch?v=9TZXsZItgdw" target="_blank">
+            <div class="yb-video__link">
               <picture>
                 <!--<source type="image/webp" media="(max-width: 767px)" srcset="img/content/preview-mobile.webp 1x, img/content/preview-mobile@2x.webp 2x">
                 <source type="image/webp" media="(max-width: 1199px)" srcset="img/content/preview-tablet.webp 1x, img/content/preview-tablet@2x.webp 2x">
@@ -100,8 +100,9 @@
                 <img src="img/content/preview-desktop.jpg" srcset="img/content/preview-desktop@2x.jpg 2x"
                   alt="Фото тренажерного зала" width="364" height="228">
               </picture>
-              <button></button>
-            </a>
+              <a href="https://www.youtube.com/watch?v=9TZXsZItgdw" target="_blank" tabindex="0"
+                aria-label="Включить видео"></a>
+            </div>
           </div>
         </div>
       </div>
@@ -480,69 +481,110 @@
             </div>
           </div>
         </div>
-        <div class="trainers__button swip-button trainers__button--nojs trainers__button--prev swiper-button-prev">
+        <div class="trainers__button swip-button trainers__button--nojs trainers__button--prev swiper-button-prev"
+          aria-label="На предыдущий слайд">
         </div>
-        <div class="trainers__button swip-button trainers__button--nojs trainers__button--next swiper-button-next">
+        <div class="trainers__button swip-button trainers__button--nojs trainers__button--next swiper-button-next"
+          aria-label="На следующий слайд">
         </div>
       </div>
     </section>
-    <section class="feedbacks">
+    <section class="advantages">
       <div class="container">
-        <h2>Отзывы</h2>
-        <div class="feedbacks__list swiper">
-          <div class="feedbacks__wrap feedbacks__wrap--nojs swiper-wrapper">
-            <blockquote class="feedbacks__item feedbacks__item--nojs swiper-slide">
-              <picture class="feedbacks__image">
-                <!--<source type="image/webp" srcset="img/content/feedback-avatar.webp 1x, img/content/feedback-avatar@2x.webp 2x">-->
-
-                <!-- 1х: 80px; 2x: 160px -->
-                <img src="img/content/feedback-avatar.jpg" srcset="img/content/feedback-avatar@2x.jpg 2x"
-                  alt="Фото клиента" width="80" height="80">
-              </picture>
-              <cite>Анна Орлова</cite>
-              <p>
-                «Хожу в SuperClub уже больше года. Нравится, что в клубе всегда чисто, тренажеры обновляют, персонал
-                дружелюбный. Зал просторный, даже в вечернее время нет очередей»
-              </p>
-            </blockquote>
-            <blockquote class="feedbacks__item feedbacks__item--nojs swiper-slide">
-              <picture class="feedbacks__image">
-                <!--<source type="image/webp" srcset="img/content/feedback-avatar.webp 1x, img/content/feedback-avatar@2x.webp 2x">-->
-
-                <!-- 1х: 80px; 2x: 160px -->
-                <img src="img/content/feedback-avatar.jpg" srcset="img/content/feedback-avatar@2x.jpg 2x"
-                  alt="Фото клиента" width="80" height="80">
-              </picture>
-              <cite>Анна Орлова</cite>
-              <p>
-                «Хожу в SuperClub уже больше года. Нравится, что в клубе всегда чисто, тренажеры обновляют, персонал
-                дружелюбный. Зал просторный, даже в вечернее время нет очередей»
-              </p>
-            </blockquote>
-            <blockquote class="feedbacks__item feedbacks__item--nojs swiper-slide">
-              <picture class="feedbacks__image">
-                <!--<source type="image/webp" srcset="img/content/feedback-avatar.webp 1x, img/content/feedback-avatar@2x.webp 2x">-->
-
-                <!-- 1х: 80px; 2x: 160px -->
-                <img src="img/content/feedback-avatar.jpg" srcset="img/content/feedback-avatar@2x.jpg 2x"
-                  alt="Фото клиента" width="80" height="80">
-              </picture>
-              <cite>Анна Орлова</cite>
-              <p>
-                «Хожу в SuperClub уже больше года. Нравится, что в клубе всегда чисто, тренажеры обновляют, персонал
-                дружелюбный. Зал просторный, даже в вечернее время нет очередей»
-              </p>
-            </blockquote>
-          </div>
-        </div>
-        <div class="feedbacks__button swip-button feedbacks__button--nojs feedbacks__button--prev swiper-button-prev">
-        </div>
-        <div class="feedbacks__button swip-button feedbacks__button--nojs feedbacks__button--next swiper-button-next">
-        </div>
+        <h2>Наши преимущества</h2>
+        <ul class="advantages__list">
+          <li class="advantages__item">
+            <p>900<span>кв/м</span></p>
+            <h3>Площадь</h3>
+            <p>Занимайтесь без очередей и толпучки</p>
+          </li>
+          <li class="advantages__item">
+            <p>70<span>машин</span></p>
+            <h3>Собственная парковка</h3>
+            <p>Вы всегда найдете место для своей машины на нашей парковке</p>
+          </li>
+          <li class=" advantages__item advantages__item--main">
+            <p>100</p>
+            <p>Тренажеров</p>
+            <p>Современные тренажеры на все группы мышц</p>
+          </li>
+          <li class="advantages__item advantages__item--bottom">
+            <p>350<span>мест</span></p>
+            <h3>Комфорт</h3>
+            <p>Просторные раздевалки, душевые, фен, Wi-Fi, кулеры</p>
+          </li>
+          <li class="advantages__item advantages__item--bottom"">
+            <p>5+<span>лет</span></p>
+            <h3>Тренерский опыт</h3>
+            <p>Добивайтесь своих целей быстрее с профессиональным тренером</p>
+          </li>
+        </ul>
       </div>
+    </section>
+    <section class=" feedbacks">
+            <div class="container">
+              <h2>Отзывы</h2>
+              <div class="feedbacks__list swiper">
+                <div class="feedbacks__wrap feedbacks__wrap--nojs swiper-wrapper">
+                  <blockquote class="feedbacks__item feedbacks__item--nojs swiper-slide">
+                    <picture class="feedbacks__image">
+                      <!--<source type="image/webp" srcset="img/content/feedback-avatar.webp 1x, img/content/feedback-avatar@2x.webp 2x">-->
+
+                      <!-- 1х: 80px; 2x: 160px -->
+                      <img src="img/content/feedback-avatar.jpg" srcset="img/content/feedback-avatar@2x.jpg 2x"
+                        alt="Фото клиента" width="80" height="80">
+                    </picture>
+                    <cite>Анна Орлова</cite>
+                    <p>
+                      «Хожу в SuperClub уже больше года. Нравится, что в клубе всегда чисто, тренажеры обновляют,
+                      персонал
+                      дружелюбный. Зал просторный, даже в вечернее время нет очередей»
+                    </p>
+                  </blockquote>
+                  <blockquote class="feedbacks__item feedbacks__item--nojs swiper-slide">
+                    <picture class="feedbacks__image">
+                      <!--<source type="image/webp" srcset="img/content/feedback-avatar.webp 1x, img/content/feedback-avatar@2x.webp 2x">-->
+
+                      <!-- 1х: 80px; 2x: 160px -->
+                      <img src="img/content/feedback-avatar.jpg" srcset="img/content/feedback-avatar@2x.jpg 2x"
+                        alt="Фото клиента" width="80" height="80">
+                    </picture>
+                    <cite>Анна Орлова</cite>
+                    <p>
+                      «Хожу в SuperClub уже больше года. Нравится, что в клубе всегда чисто, тренажеры обновляют,
+                      персонал
+                      дружелюбный. Зал просторный, даже в вечернее время нет очередей»
+                    </p>
+                  </blockquote>
+                  <blockquote class="feedbacks__item feedbacks__item--nojs swiper-slide">
+                    <picture class="feedbacks__image">
+                      <!--<source type="image/webp" srcset="img/content/feedback-avatar.webp 1x, img/content/feedback-avatar@2x.webp 2x">-->
+
+                      <!-- 1х: 80px; 2x: 160px -->
+                      <img src="img/content/feedback-avatar.jpg" srcset="img/content/feedback-avatar@2x.jpg 2x"
+                        alt="Фото клиента" width="80" height="80">
+                    </picture>
+                    <cite>Анна Орлова</cite>
+                    <p>
+                      «Хожу в SuperClub уже больше года. Нравится, что в клубе всегда чисто, тренажеры обновляют,
+                      персонал
+                      дружелюбный. Зал просторный, даже в вечернее время нет очередей»
+                    </p>
+                  </blockquote>
+                </div>
+              </div>
+              <div
+                class="feedbacks__button swip-button feedbacks__button--nojs feedbacks__button--prev swiper-button-prev"
+                aria-label="На предыдущий слайд">
+              </div>
+              <div
+                class="feedbacks__button swip-button feedbacks__button--nojs feedbacks__button--next swiper-button-next"
+                aria-label="На следующий слайд">
+              </div>
+            </div>
     </section>
   </main>
-  <footer class="footer">
+  <footer class=" footer">
     <div class="container">
       <nav class="footer__nav">
         <a class="footer__logo">

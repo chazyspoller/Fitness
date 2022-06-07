@@ -1,0 +1,171 @@
+.advantages {
+  padding: 120px 0;
+  background-color: $color-gray;
+
+  @include vp-1200 {
+    padding: 100px 0;
+  }
+
+  @include vp-768 {
+    padding: 70px 0 20px;
+  }
+
+  h2 {
+    @include reset-margins;
+    font: 700 3.07em/1em $ff-titles;
+    letter-spacing: 0.03em;
+    text-align: center;
+    margin-bottom: 80px;
+    text-transform: uppercase;
+
+    @include vp-1200 {
+      font: 700 2.63em/1em $ff-titles;
+      margin-bottom: 60px;
+    }
+
+    @include vp-768 {
+      font: 700 2em/1em $ff-titles;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.advantages__list {
+  @include reset-margins;
+  padding: 0 80px;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  grid-template-rows: 1fr 1fr;
+  grid-auto-rows: 1fr;
+  gap: 0 6%;
+
+  @include vp-1200 {
+    padding: 0;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: max-content 1.5fr max-content;
+    gap: 50px 6%;
+  }
+
+  @include vp-768 {
+    display: block;
+  }
+}
+
+.advantages__item {
+  color: $color-blue;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: min-content min-content;
+  gap: 10px 30px;
+
+  @include vp-768 {
+    display: block;
+    padding: 50px 47px;
+    text-align: center;
+  }
+
+  h3 {
+    @include reset-margins;
+    font: 700 1.38em/1.2em $ff-default;
+
+    @include vp-1200 {
+      font: 700 1.25em/1.2em $ff-default;
+    }
+
+    @include vp-768 {
+      margin-bottom: 15px;
+    }
+  }
+
+  p {
+    @include reset-margins;
+
+    &:first-of-type {
+      font: 700 4.44em/0.82em $ff-default;
+      background: $color-advantages-text;
+      background-clip: text;
+      color: transparent;
+      grid-row: span 2;
+
+      @include vp-1200 {
+        font: 700 3.63em/0.82em $ff-default;
+      }
+
+      @include vp-768 {
+        margin-bottom: 20px;
+      }
+    }
+
+    &:last-of-type {
+      font: 400 1em/1.2em $ff-default;
+      margin: 0;
+
+      @include vp-768 {
+        text-align: center;
+      }
+    }
+  }
+
+  span {
+    color: $color-bright-blue;
+    background: none;
+    background-clip: none;
+    display: block;
+    margin-top: 5px;
+
+    font: 400 14px/1em $ff-default;
+  }
+
+  &--bottom {
+    align-self: flex-end;
+  }
+
+  &--main {
+    display: block;
+    min-width: 240px;
+    background-color: $color-feedback;
+    padding: 60px 34px;
+    text-align: center;
+    color: $color-default-white;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: -1;
+    align-self: center;
+
+    @include vp-1200 {
+      padding: 45px 20%;
+      max-width: 100%;
+      width: 70%;
+      grid-column-start: 1;
+      grid-column-end: -1;
+      grid-row-start: 2;
+      grid-row-end: 3;
+      justify-self: center;
+    }
+
+    @include vp-768 {
+      padding: 50px 47px;
+      width: 100%;
+    }
+
+    p {
+      font: 700 1.63em/1.2em $ff-default;
+      margin-bottom: 40px;
+
+      @include vp-1200 {
+        font: 700 1.38em/1.2em $ff-default;
+        margin-bottom: 20px;
+      }
+
+      &:first-of-type {
+        color: $color-default-white;
+        font: 700 4.63em/1em $ff-default;
+        margin-bottom: 10px;
+        background: none;
+        background-clip: none;
+      }
+    }
+  }
+}
