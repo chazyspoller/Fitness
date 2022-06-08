@@ -1268,6 +1268,29 @@ body main {
   z-index: 1;
 }
 
+@-webkit-keyframes visibleCard {
+  0% {
+    display: grid;
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes visibleCard {
+  0% {
+    display: -ms-grid;
+    display: grid;
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .tabs__content {
   margin: 0;
   padding: 0;
@@ -1453,29 +1476,6 @@ body main {
   width: 100%;
   height: 2px;
   background-color: #d10a42;
-}
-
-@-webkit-keyframes visibleCard {
-  0% {
-    display: grid;
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes visibleCard {
-  0% {
-    display: -ms-grid;
-    display: grid;
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
 }
 
 .tabs--nojs .tabs__content--1:target ~ .tabs__links > .tabs__link-item > a[href="#content-1"],
@@ -1862,6 +1862,8 @@ body main {
 
 .feedbacks__list {
   max-width: 48.2%;
+  -webkit-box-shadow: 0 0 40px rgba(28, 51, 116, 0.2);
+  box-shadow: 0 0 40px rgba(28, 51, 116, 0.2);
 }
 
 .feedbacks__wrap {
@@ -1883,8 +1885,6 @@ body main {
   padding: 0;
   padding: 62px 55px 57px 62px;
   background-color: #1c3374;
-  -webkit-box-shadow: 0 0 40px rgba(28, 51, 116, 0.2);
-  box-shadow: 0 0 40px rgba(28, 51, 116, 0.2);
   color: #ffffff;
   display: -ms-grid;
   display: grid;
@@ -2010,11 +2010,6 @@ body main {
 
 .advantages__item p:first-of-type {
   font: 700 4.44em/0.82em "Roboto Condensed", "Arial", sans-serif;
-  background: -o-linear-gradient(322.39deg, #d10a42 0%, #0041ca 45.58%);
-  background: linear-gradient(127.61deg, #d10a42 0%, #0041ca 45.58%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
   -ms-grid-row-span: 2;
   grid-row: span 2;
 }
@@ -2025,9 +2020,18 @@ body main {
 }
 
 .advantages__item span {
+  background: -o-linear-gradient(322.39deg, #d10a42 0%, #0041ca 45.58%);
+  background: linear-gradient(127.61deg, #d10a42 0%, #0041ca 45.58%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.advantages__item span:last-of-type {
   color: #2e35ac;
   background: none;
   background-clip: none;
+  -webkit-text-fill-color: inherit;
   display: block;
   margin-top: 5px;
   font: 400 14px/1em "Roboto Condensed", "Arial", sans-serif;
@@ -2073,7 +2077,7 @@ body main {
   font: 700 4.63em/1em "Roboto Condensed", "Arial", sans-serif;
   margin-bottom: 8px;
   background: none;
-  background-clip: none;
+  -webkit-text-fill-color: inherit;
 }
 
 .discounts {
@@ -2346,6 +2350,26 @@ body main {
 .connection__form input:focus {
   outline: none;
   border-color: #ed0233;
+}
+
+.connection__form input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.connection__form input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.connection__form input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.connection__form input::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.connection__form input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .connection__form button {
@@ -2850,10 +2874,6 @@ body main {
     grid-template-columns: 1fr 1fr;
   }
 
-  .trainers__info {
-    padding: 56px 30px;
-  }
-
   .trainers__item--nojs::before {
     content: "";
     position: absolute;
@@ -2878,6 +2898,10 @@ body main {
 
   .trainers__item--nojs ul {
     opacity: 1;
+  }
+
+  .trainers__info {
+    padding: 56px 30px;
   }
 
   .trainers__button--prev {

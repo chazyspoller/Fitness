@@ -114,6 +114,10 @@
       outline: none;
       border-color: $color-pink;
     }
+
+    &::placeholder {
+      color: rgba($color-default-white, 0.8);
+    }
   }
 
   button {

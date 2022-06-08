@@ -95,9 +95,6 @@
 
     &:first-of-type {
       font: 700 4.44em/0.82em $ff-default;
-      background: $color-advantages-text;
-      background-clip: text;
-      color: transparent;
       grid-row: span 2;
 
       @include vp-1200 {
@@ -120,13 +117,19 @@
   }
 
   span {
-    color: $color-bright-blue;
-    background: none;
-    background-clip: none;
-    display: block;
-    margin-top: 5px;
+    background: $color-advantages-text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 
-    font: 400 14px/1em $ff-default;
+    &:last-of-type {
+      color: $color-bright-blue;
+      background: none;
+      background-clip: none;
+      -webkit-text-fill-color: inherit;
+      display: block;
+      margin-top: 5px;
+      font: 400 14px/1em $ff-default;
+    }
   }
 
   &--left {
@@ -191,7 +194,7 @@
         font: 700 4.63em/1em $ff-default;
         margin-bottom: 8px;
         background: none;
-        background-clip: none;
+        -webkit-text-fill-color: inherit;
 
         @include vp-1200 {
           font: 700 4.63em/1em $ff-default;
