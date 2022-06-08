@@ -12,6 +12,7 @@ let swiperFeedbacks = new Swiper('.feedbacks__list', {
 
   simulateTouch: false,
   grabCursor: true,
+  autoHeight: true,
 
   keyboard: {
     enabled: true,

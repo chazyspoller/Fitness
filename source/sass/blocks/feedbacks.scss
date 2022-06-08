@@ -3,7 +3,7 @@
   position: relative;
 
   @include vp-1200 {
-    padding: 0 56px 100px 56px;
+    padding: 0 62px 100px 62px;
   }
 
   @include vp-768 {
@@ -15,12 +15,12 @@
     font: 700 3.07em/1em $ff-titles;
     letter-spacing: 0.03em;
     text-align: center;
-    margin-bottom: 62px;
+    margin-bottom: 55px;
     text-transform: uppercase;
 
     @include vp-1200 {
       font: 700 2.63em/1em $ff-titles;
-      margin-bottom: 50px;
+      margin-bottom: 45px;
     }
 
     @include vp-768 {
@@ -29,14 +29,14 @@
   }
 }
 
-.feedbacks>.container {
+.feedbacks > .container {
   @include vp-768 {
     padding: 0 32px;
   }
 }
 
 .feedbacks__list {
-  max-width: 55%;
+  max-width: 48.2%;
 
   @include vp-1200 {
     max-width: 100%;
@@ -54,22 +54,22 @@
 
 .feedbacks__item {
   @include reset-margins;
-  padding: 62px;
+  padding: 62px 55px 57px 62px;
   background-color: $color-feedback;
   box-shadow: 0 0 40px $color-feedback-shadow;
   color: $color-default-white;
   display: grid;
   grid-template-columns: min-content 1fr;
-  gap: 25px 28px;
+  gap: 15px 28px;
 
   @include vp-1200 {
-    padding: 62px 65px;
+    padding: 62px 65px 58px;
   }
 
   @include vp-768 {
     grid-template-columns: 1fr 1fr;
-    padding: 40px 25px;
-    gap: 20px 15px;
+    padding: 40px 25px 32px;
+    gap: 17px 10px;
   }
 
   &--nojs {
@@ -79,17 +79,19 @@
   }
 
   cite {
-    font: 700 1.25em/1em $ff-default;
+    font: 700 1.25em/1.3em $ff-default;
+    margin-top: -6px;
 
     @include vp-768 {
       width: min-content;
+      margin: -2px 0 0 6px;
       align-self: center;
     }
   }
 
   p {
     @include reset-margins;
-    font: 400 1em/1.2em $ff-default;
+    font: 400 1em/1.4em $ff-default;
 
     @include vp-768 {
       grid-column: span 2;
@@ -104,6 +106,8 @@
   grid-row: span 2;
 
   @include vp-768 {
+    width: 68px;
+    height: 68px;
     grid-row: span 1;
     justify-self: end;
   }
@@ -114,12 +118,17 @@
     background-color: $color-arrows;
     border-radius: 50%;
     object-fit: cover;
+
+    @include vp-768 {
+      width: 68px;
+      height: 68px;
+    }
   }
 }
 
 .feedbacks__button {
   &--prev {
-    left: 20%;
+    left: 24%;
 
     &::before {
       transform: rotate(-45deg);
@@ -130,7 +139,7 @@
     }
 
     @include vp-1200 {
-      left: 45px;
+      left: 4%;
     }
 
     @include vp-768 {
@@ -139,10 +148,10 @@
   }
 
   &--next {
-    right: 20%;
+    right: 24%;
 
     @include vp-1200 {
-      right: 45px;
+      right: 4%;
     }
 
     @include vp-768 {

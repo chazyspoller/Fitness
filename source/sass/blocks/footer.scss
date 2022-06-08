@@ -1,9 +1,13 @@
 .footer {
-  padding: 34px 0;
+  padding: 38px 0;
   background-color: $color-dark-blue;
 
+  @include vp-1200 {
+    padding: 42px 0;
+  }
+
   @include vp-768 {
-    padding: 50px 15px;
+    padding: 50px 15px 45px;
   }
 }
 
@@ -47,24 +51,24 @@
   list-style: none;
   max-width: 65%;
   line-height: 0;
-  margin-top: 7px;
+  margin: 7px 0 0 25px;
   display: grid;
   grid-template-columns: repeat(5, max-content);
   gap: 10px 40px;
 
   @include vp-1200 {
     gap: 10px 30px;
-    margin-top: 9px;
+    margin: 9px 0 0 25px;
   }
 
   @include vp-768 {
     max-width: 100%;
-    margin-top: 0;
+    margin: 0;
     width: 100%;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, max-content);
     grid-auto-flow: row;
-    gap: 30px;
+    gap: 22px 30px;
     padding-bottom: 40px;
   }
 
@@ -101,9 +105,7 @@
       font: 400 1em/1em $ff-default;
     }
 
-    @media (hover: hover),
-    screen and (min-width: $vp-1200) {
-
+    @media (hover: hover), screen and (min-width: $vp-1200) {
       &:hover,
       &:focus {
         opacity: 0.6;
@@ -122,16 +124,29 @@
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  max-width: 121px;
-  margin: 0 -8px 0 -3px;
+  max-width: 135px;
+  margin: -2px -12px 0 -7px;
+
+  @include vp-1200 {
+    margin: 0 -10px 0 -5px;
+  }
 
   @include vp-768 {
+    margin: -3px -14px 0 -14px;
     max-width: 100%;
     width: 100%;
   }
 
   li {
-    padding: 0 3px;
+    padding: 0 7px;
+
+    @include vp-1200 {
+      padding: 0 5px;
+    }
+
+    @include vp-768 {
+      padding: 0 14px;
+    }
   }
 
   a {
@@ -141,9 +156,7 @@
     line-height: 0;
     transition: all 0.3s ease 0s;
 
-    @media (hover: hover),
-    screen and (min-width: $vp-1200) {
-
+    @media (hover: hover), screen and (min-width: $vp-1200) {
       &:hover,
       &:focus {
         opacity: 0.6;

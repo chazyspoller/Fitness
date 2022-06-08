@@ -1,12 +1,12 @@
 .discounts {
-  padding: 120px 0;
+  padding: 115px 0;
 
   @include vp-1200 {
-    padding: 100px 0 60px;
+    padding: 95px 0 55px;
   }
 
   @include vp-768 {
-    padding: 70px 15px;
+    padding: 65px 15px 66px;
   }
 
   h2 {
@@ -14,16 +14,17 @@
     font: 700 3.07em/1em $ff-titles;
     letter-spacing: 0.03em;
     text-align: center;
-    margin-bottom: 62px;
+    margin-bottom: 55px;
     text-transform: uppercase;
 
     @include vp-1200 {
       font: 700 2.63em/1em $ff-titles;
-      margin-bottom: 50px;
+      margin-bottom: 44px;
     }
 
     @include vp-768 {
       font: 700 2em/1em $ff-titles;
+      margin-bottom: 46px;
     }
   }
 }
@@ -55,7 +56,7 @@
 
 .discounts__main-info {
   flex: 1 1 50%;
-  padding: 44px;
+  padding: 42px 44px 48px 44px;
   background-color: $color-pink;
   color: $color-default-white;
   display: flex;
@@ -68,7 +69,7 @@
   @include vp-768 {
     flex: 1 1 100%;
     min-height: 299px;
-    padding: 45px 50px;
+    padding: 40px 50px 50px;
     text-align: center;
   }
 
@@ -81,12 +82,16 @@
   p {
     @include reset-margins;
 
-    font: 400 1.13em/1.2em $ff-default;
+    font: 400 1.13em/1.3em $ff-default;
     margin-bottom: 15px;
 
     &:first-of-type {
       font: 700 4.38em/0.82em $ff-default;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
+
+      @include vp-768 {
+        margin-bottom: 20px;
+      }
     }
   }
 
@@ -161,7 +166,7 @@
 }
 
 .discounts__item {
-  padding: 35px;
+  padding: 25px 30px 30px 30px;
   min-height: 211px;
   display: flex;
   flex-direction: column;
@@ -177,7 +182,7 @@
   }
 
   @include vp-768 {
-    padding: 40px;
+    padding: 35px 35px 42px 35px;
     margin-bottom: 0;
     text-align: center;
   }
@@ -191,12 +196,16 @@
   h3 {
     @include reset-margins;
     font: 700 1.63em/1em $ff-default;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
   }
 
   p {
     @include reset-margins;
     font: 400 1em/1.2em $ff-default;
+
+    @include vp-768 {
+      line-height: 1.3em;
+    }
   }
 
   a {
@@ -239,9 +248,7 @@
     height: 1px;
   }
 
-  @media (hover: hover),
-  screen and (min-width: $vp-1200) {
-
+  @media (hover: hover), screen and (min-width: $vp-1200) {
     &:hover,
     &:focus-visible {
       opacity: 0.7;

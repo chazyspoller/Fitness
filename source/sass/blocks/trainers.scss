@@ -3,7 +3,7 @@
   position: relative;
 
   @include vp-1200 {
-    padding: 0 56px 100px 56px;
+    padding: 0 62px 100px 62px;
   }
 
   @include vp-768 {
@@ -14,12 +14,12 @@
     @include reset-margins;
     font: 700 3.07em/1em $ff-titles;
     letter-spacing: 0.03em;
-    margin-bottom: 62px;
+    margin-bottom: 54px;
     text-transform: uppercase;
 
     @include vp-1200 {
       font: 700 2.63em/1em $ff-titles;
-      margin-bottom: 50px;
+      margin-bottom: 45px;
       text-align: center;
     }
 
@@ -29,7 +29,7 @@
   }
 }
 
-.trainers>.container {
+.trainers > .container {
   @include vp-768 {
     padding: 0 32px;
   }
@@ -61,20 +61,28 @@
   }
 }
 
+@keyframes info-slides-up {
+  0% {
+    position: static;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .trainers__item {
   color: $color-default-white;
   position: relative;
-  padding: 58px 30px;
+  min-height: 294px;
   text-align: center;
   overflow: hidden;
-  display: inline-block;
 
   @include vp-768 {
-    padding: 48px 30px;
+    min-height: 274px;
   }
 
-  @media (hover: hover),
-  screen and (min-width: $vp-1200) {
+  @media (hover: hover), screen and (min-width: $vp-1200) {
     &:hover {
       &::before {
         content: "";
@@ -105,21 +113,31 @@
 
 .trainers__info {
   position: relative;
-  transform: translateY(95%);
+  padding: 58px 30px;
+  height: 100%;
+  transform: translateY(65%);
   z-index: 1;
   transition: transform 0.3s ease 0s;
+
+  @include vp-1200 {
+    padding: 56px 30px;
+  }
+
+  @include vp-768 {
+    padding: 45px 25px;
+  }
 
   h3 {
     @include reset-margins;
     font: 700 1.13em/1em $ff-default;
-    margin-bottom: 10px;
-  }
+    margin-bottom: 5px;
+}
 
   p {
     @include reset-margins;
     font: 400 1em/1em $ff-default;
     color: $color-light-white;
-    margin-bottom: 45px;
+    margin-bottom: 38px;
     opacity: 0;
     transition: opacity 0.5s ease 0s;
   }
@@ -183,12 +201,16 @@
   }
 
   li {
-    font: 400 0.88em/1em $ff-default;
+    font: 400 0.88em/1.28em $ff-default;
     padding-left: 16px;
     position: relative;
 
+    @include vp-768 {
+      line-height: 1.35em;
+    }
+
     &:not(:last-of-type) {
-      margin-bottom: 24px;
+      margin-bottom: 16px;
     }
 
     &::before {
@@ -206,7 +228,7 @@
 
 .trainers__button {
   &--prev {
-    left: 25px;
+    left: 2.2%;
 
     &::before {
       transform: rotate(-45deg);
@@ -217,7 +239,7 @@
     }
 
     @include vp-1200 {
-      left: 45px;
+      left: 3.8%;
     }
 
     @include vp-768 {
@@ -226,10 +248,10 @@
   }
 
   &--next {
-    right: 25px;
+    right: 2.2%;
 
     @include vp-1200 {
-      right: 45px;
+      right: 3.8%;
     }
 
     @include vp-768 {

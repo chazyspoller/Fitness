@@ -2,11 +2,11 @@
   padding: 120px 0 235px;
 
   @include vp-1200 {
-    padding: 100px 0 183px;
+    padding: 95px 0 183px;
   }
 
   @include vp-768 {
-    padding: 70px 0;
+    padding: 65px 0 70px;
   }
 }
 
@@ -44,57 +44,58 @@
 }
 
 .gym__info {
-  padding: 50px 0 0;
+  padding: 45px 0 0 5%;
   color: $color-blue;
-  flex: 0 1 30%;
+  flex: 0 1 35.7%;
 
   @include vp-1200 {
     flex: 1 1 100%;
     padding: 0 12%;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 33px;
   }
 
   @include vp-768 {
     padding: 0 15px;
     text-align: left;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
   }
 
   h2 {
     @include reset-margins;
     font: 700 3.07em/1em $ff-titles;
     letter-spacing: 0.03em;
-    margin-bottom: 25px;
+    margin-bottom: 12px;
     text-transform: uppercase;
 
     @include vp-1200 {
       font: 700 2.63em/1em $ff-titles;
+      margin-bottom: 14px;
     }
 
     @include vp-768 {
       font: 700 2em/1em $ff-titles;
-      margin-bottom: 20px;
+      margin-bottom: 12px;
     }
   }
 
   h3 {
     @include reset-margins;
     font: 400 1.13em/1.2em $ff-default;
-    margin-bottom: 55px;
+    margin-bottom: 42px;
 
     @include vp-1200 {
-      margin-bottom: 50px;
+      margin-bottom: 38px;
     }
 
     @include vp-768 {
-      margin-bottom: 40px;
+      margin-bottom: 26px;
     }
   }
 
   p {
     @include reset-margins;
-    font: 300 1em/1.2em $ff-default;
+    font: 300 1em/1.5em $ff-default;
 
     &:not(:last-of-type) {
       margin-bottom: 10px;
@@ -110,12 +111,13 @@
 
 .gym__yb-video {
   position: absolute;
-  top: 70%;
-  left: 50%;
+  top: 71.2%;
+  left: 53.5%;
   transform: translateX(-50%);
 
   @include vp-1200 {
-    top: 82%;
+    top: 85.5%;
+    left: 50%;
   }
 
   @include vp-768 {

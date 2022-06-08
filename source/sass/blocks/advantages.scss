@@ -1,13 +1,13 @@
 .advantages {
-  padding: 120px 0;
+  padding: 113px 0 120px;
   background-color: $color-gray;
 
   @include vp-1200 {
-    padding: 100px 0;
+    padding: 95px 0 96px;
   }
 
   @include vp-768 {
-    padding: 70px 0 20px;
+    padding: 65px 0 67px;
   }
 
   h2 {
@@ -15,36 +15,38 @@
     font: 700 3.07em/1em $ff-titles;
     letter-spacing: 0.03em;
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 70px;
     text-transform: uppercase;
 
     @include vp-1200 {
       font: 700 2.63em/1em $ff-titles;
-      margin-bottom: 60px;
+      margin-bottom: 52px;
     }
 
     @include vp-768 {
       font: 700 2em/1em $ff-titles;
-      margin-bottom: 10px;
+      margin-bottom: 50px;
     }
   }
 }
 
 .advantages__list {
   @include reset-margins;
-  padding: 0 80px;
+  //padding: 0 62px;
   list-style: none;
   display: grid;
   grid-template-columns: 2fr 1fr 2fr;
   grid-template-rows: 1fr 1fr;
   grid-auto-rows: 1fr;
   gap: 0 6%;
+  max-width: 1040px;
+  margin: 0 auto;
 
   @include vp-1200 {
     padding: 0;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: max-content 1.5fr max-content;
-    gap: 50px 6%;
+    gap: 45px 4.8%;
   }
 
   @include vp-768 {
@@ -58,11 +60,21 @@
   grid-template-columns: min-content 1fr;
   grid-template-rows: min-content min-content;
   gap: 10px 30px;
+  border-bottom: 1px solid $color-advantages-border;
+
+  @include vp-1200 {
+    gap: 5px 28px;
+    border: none;
+  }
 
   @include vp-768 {
     display: block;
-    padding: 50px 47px;
+    padding: 0 42px;
     text-align: center;
+
+    &:not(:last-of-type) {
+      margin-bottom: 45px;
+    }
   }
 
   h3 {
@@ -74,7 +86,7 @@
     }
 
     @include vp-768 {
-      margin-bottom: 15px;
+      margin-bottom: 5px;
     }
   }
 
@@ -93,12 +105,12 @@
       }
 
       @include vp-768 {
-        margin-bottom: 20px;
+        margin-bottom: 12px;
       }
     }
 
     &:last-of-type {
-      font: 400 1em/1.2em $ff-default;
+      font: 400 1em/1.3em $ff-default;
       margin: 0;
 
       @include vp-768 {
@@ -117,15 +129,26 @@
     font: 400 14px/1em $ff-default;
   }
 
+  &--left {
+    margin-left: auto;
+    max-width: 325px;
+
+    @include vp-1200 {
+      max-width: 100%;
+      margin-left: 0;
+    }
+  }
+
   &--bottom {
     align-self: flex-end;
+    border: none;
   }
 
   &--main {
     display: block;
     min-width: 240px;
     background-color: $color-feedback;
-    padding: 60px 34px;
+    padding: 55px 34px 60px;
     text-align: center;
     color: $color-default-white;
     grid-column-start: 2;
@@ -135,9 +158,9 @@
     align-self: center;
 
     @include vp-1200 {
-      padding: 45px 20%;
+      padding: 32px 19% 42px;
       max-width: 100%;
-      width: 70%;
+      width: 65%;
       grid-column-start: 1;
       grid-column-end: -1;
       grid-row-start: 2;
@@ -146,25 +169,38 @@
     }
 
     @include vp-768 {
-      padding: 50px 47px;
+      padding: 37px 55px 47px;
       width: 100%;
     }
 
     p {
       font: 700 1.63em/1.2em $ff-default;
-      margin-bottom: 40px;
+      margin-bottom: 38px;
 
       @include vp-1200 {
         font: 700 1.38em/1.2em $ff-default;
         margin-bottom: 20px;
       }
 
+      @include vp-768 {
+        margin-bottom: 12px;
+      }
+
       &:first-of-type {
         color: $color-default-white;
         font: 700 4.63em/1em $ff-default;
-        margin-bottom: 10px;
+        margin-bottom: 8px;
         background: none;
         background-clip: none;
+
+        @include vp-1200 {
+          font: 700 4.63em/1em $ff-default;
+          margin-bottom: 4px;
+        }
+
+        @include vp-768 {
+          margin-bottom: 0;
+        }
       }
     }
   }

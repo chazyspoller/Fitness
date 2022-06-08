@@ -1,0 +1,264 @@
+.connection {
+  h2 {
+    @include reset-margins;
+    font: 700 3.07em/1em $ff-titles;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    @include vp-1200 {
+      font: 700 2.63em/1em $ff-titles;
+    }
+
+    @include vp-768 {
+      font: 700 2em/1em $ff-titles;
+    }
+  }
+}
+
+.connection__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include vp-1200 {
+    flex-direction: column;
+  }
+}
+
+.connection__connect-form {
+  flex: 0 1 50%;
+  padding: 65px 102/1366 * 100%;
+  background-color: $color-blue;
+  color: $color-default-white;
+
+  @include vp-1200 {
+    flex: 0 1 100%;
+    padding: 65px 133px 68px 133px;
+  }
+
+  @include vp-768 {
+    padding: 67px 15px 69px;
+  }
+
+  h2 {
+    margin-bottom: 36px;
+
+    @include vp-1200 {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.connection__form {
+  display: flex;
+  max-width: 86%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @include vp-1200 {
+    max-width: 94.1%;
+  }
+
+  @include vp-768 {
+    max-width: 100%;
+  }
+
+  label {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    border: 0;
+
+    clip: rect(0 0 0 0);
+    clip-path: inset(100%);
+  }
+
+  input {
+    flex: 0 1 46%;
+    padding: 10px 0 8px;
+    border: none;
+    border-bottom: 1px solid $color-contacts-border;
+    background-color: transparent;
+    color: $color-default-white;
+    font: 400 0.88em/1em $ff-default;
+    margin-bottom: 28px;
+    transition: all 0.3s ease 0s;
+
+    @include vp-1200 {
+      flex: 0 1 44%;
+    }
+
+    @include vp-768 {
+      flex: 1 1 100%;
+      margin-bottom: 25px;
+
+      &:last-of-type {
+        margin-bottom: 37px;
+      }
+    }
+
+    @media (hover: hover), screen and (min-width: $vp-1200) {
+      &:hover {
+        border-color: $color-default-white;
+        color: $color-pink;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $color-pink;
+    }
+  }
+
+  button {
+    flex: 1 1 100%;
+    border: 3px solid $color-default-white;
+    background-color: transparent;
+    color: $color-default-white;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 18px;
+    font: 700 0.88em/1em $ff-default;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+
+    @media (hover: hover), screen and (min-width: $vp-1200) {
+      &:hover,
+      &:focus-visible {
+        background-color: $color-default-white;
+        color: $color-blue;
+      }
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+}
+
+.connection__contacts {
+  flex: 0 1 50%;
+  padding: 65px 70px 67px 122/1366 * 100%;
+  background-color: $color-default-white;
+  color: $color-blue;
+  border-top: 1px solid $color-contacts-border;
+
+  @include vp-1200 {
+    flex: 0 1 100%;
+    border: none;
+    padding: 65px 133px 44px 133px;
+  }
+
+  @include vp-768 {
+    padding: 67px 15px 65px;
+  }
+
+  h2 {
+    margin-bottom: 48px;
+
+    @include vp-1200 {
+      margin-bottom: 40px;
+    }
+
+    @include vp-768 {
+      margin-bottom: 42px;
+    }
+  }
+}
+
+.connection__contacts-list {
+  @include reset-margins;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 40% 40%;
+  grid-template-rows: min-content;
+  grid-auto-rows: min-content;
+  gap: 25px 20%;
+  position: relative;
+
+  @include vp-1200 {
+    grid-template-columns: 45% 37.5%;
+    gap: 28px 17.5%;
+  }
+
+  @include vp-768 {
+    grid-template-columns: 1fr;
+    gap: 28px 0;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 47.5%;
+    transform: translateX(-50%);
+    width: 1px;
+    background-color: $color-contacts-border;
+
+    @include vp-1200 {
+      left: 53%;
+      top: 3px;
+      bottom: 5px;
+    }
+  }
+}
+
+.connection__contacts-item {
+  &--after {
+    @include vp-768 {
+      order: 1;
+    }
+  }
+
+  h3 {
+    @include reset-margins;
+    font: 700 1em/1em $ff-default;
+    margin-bottom: 8px;
+
+    @include vp-1200 {
+      font: 700 1.25em/1em $ff-default;
+      margin-bottom: 12px;
+    }
+
+    @include vp-768 {
+      margin-bottom: 13px;
+    }
+  }
+
+  p {
+    @include reset-margins;
+    font: 400 0.88em/1.2em $ff-default;
+
+    @include vp-1200 {
+      font: 400 1.13em/1.2em $ff-default;
+    }
+  }
+
+  a {
+    transition: all 0.3s ease 0s;
+
+    @media (hover: hover), screen and (min-width: $vp-1200) {
+      &:hover,
+      &:focus {
+        outline: none;
+        color: $color-pink;
+      }
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+  }
+}

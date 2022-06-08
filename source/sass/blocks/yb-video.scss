@@ -12,10 +12,6 @@
     width: 100%;
   }
 
-  &--enabled {
-    cursor: pointer;
-  }
-
   a {
     @include reset-margins;
     position: absolute;
@@ -100,9 +96,7 @@
   border: none;
 }
 
-@media (hover: hover),
-screen and (min-width: $vp-1200) {
-
+@media (hover: hover), screen and (min-width: $vp-1200) {
   .yb-video a:hover,
   .yb-video a:focus-visible {
     outline: none;

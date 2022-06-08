@@ -1,8 +1,8 @@
 .promo {
-  padding: 120px 0;
+  padding: 120px 0 115px;
 
   @include vp-1200 {
-    padding: 100px 0;
+    padding: 100px 0 95px;
   }
 
   @include vp-768 {
@@ -53,13 +53,11 @@
 
     @include vp-1200 {
       font: 700 0.63em/1em $ff-default;
-      padding: 16px;
+      padding: 14px;
       border-width: 2px;
     }
 
-    @media (hover: hover),
-    screen and (min-width: $vp-1200) {
-
+    @media (hover: hover), screen and (min-width: $vp-1200) {
       &:hover,
       &:focus-visible {
         background-color: $color-default-white;
@@ -79,7 +77,7 @@
   margin-bottom: 15px;
 
   @include vp-1200 {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
   }
 
   h3 {
@@ -97,7 +95,7 @@
   }
 }
 
-.promo__info>p {
+.promo__info > p {
   @include reset-margins;
   font: 400 1.13em/1em $ff-default;
   margin-bottom: 15px;

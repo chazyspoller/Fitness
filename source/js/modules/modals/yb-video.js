@@ -40,7 +40,6 @@ const setupVideo = (video) => {
     });
 
     link.removeAttribute('href');
-    video.classList.add('yb-video--enabled');
   }
 };
 

@@ -15,7 +15,7 @@
   order: 1;
   animation: visibleCard 0.7s ease-in-out;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px 4%;
+  gap: 40px 3.5%;
   transition: all 0.3s ease 0s;
 
   @include vp-1200 {
@@ -37,14 +37,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 68px 15px;
+  padding: 55px 15px 60px;
   min-height: 448px;
   background-color: $color-default-white;
   text-align: center;
   border: 7px solid transparent;
 
   @include vp-768 {
-    padding: 55px 20px;
+    padding: 45px 20px;
     min-height: 384px;
 
     svg {
@@ -53,9 +53,7 @@
     }
   }
 
-  @media (hover: hover),
-  screen {
-
+  @media (hover: hover), screen and (min-width: $vp-1200) {
     &:hover,
     &:focus-within {
       border: 7px solid;
@@ -68,7 +66,7 @@
     @include reset-margins;
     font: 700 1.63em/1.2em $ff-default;
     color: $color-blue;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 
     @include vp-768 {
       font: 700 1.38em/1.2em $ff-default;
@@ -86,7 +84,7 @@
     &:last-of-type {
       font: 700 3.75em/0.71em $ff-default;
       color: $color-bright-blue;
-      padding: 70px 0 0 0;
+      padding: 60px 0 0 0;
       position: relative;
       margin-top: auto;
       margin-bottom: 59px;
@@ -105,7 +103,7 @@
       &::before {
         content: attr(data-price);
         position: absolute;
-        bottom: -10px;
+        bottom: -5px;
         left: 50%;
         transform: translateX(-50%);
         font: 700 1.67em/1em $ff-default;
@@ -123,14 +121,12 @@
     letter-spacing: 0.05em;
     outline: 2px solid $color-blue;
     outline-offset: -2px;
-    max-width: 206px;
+    width: 206px;
     transition: color 0.5s ease 0s, background 0.5s ease 0s;
   }
 }
 
-@media (hover: hover),
-screen {
-
+@media (hover: hover), screen and (min-width: $vp-1200) {
   .tabs__content-item:hover a,
   .tabs__content-item a:focus {
     background: $prices-gradient;
@@ -219,7 +215,7 @@ screen {
     font: 400 1.25em/1em $ff-default;
     text-align: center;
     text-decoration: none;
-    padding: 20px 0;
+    padding: 16px 0;
     position: relative;
     transition: color 0.3s ease 0s;
     color: rgba($color-blue, 0.5);
@@ -232,9 +228,7 @@ screen {
       font: 400 1em/1em $ff-default;
     }
 
-    @media (hover: hover),
-    screen and (min-width: $vp-1200) {
-
+    @media (hover: hover), screen and (min-width: $vp-1200) {
       &:hover,
       &:focus-visible {
         outline: none;
@@ -259,9 +253,7 @@ screen {
       background-color: $color-dark-pink;
     }
 
-    @media (hover: hover),
-    screen and (min-width: $vp-1200) {
-
+    @media (hover: hover), screen and (min-width: $vp-1200) {
       &:hover,
       &:focus-visible {
         outline: none;
@@ -271,9 +263,9 @@ screen {
   }
 }
 
-.tabs--nojs>.tabs__links>.tabs__link-item>a[href="#content-1"],
-.tabs--nojs .tabs__content--2:target~.tabs__links>.tabs__link-item>a[href="#content-2"],
-.tabs--nojs .tabs__content--3:target~.tabs__links>.tabs__link-item>a[href="#content-3"] {
+.tabs--nojs > .tabs__links > .tabs__link-item > a[href="#content-1"],
+.tabs--nojs .tabs__content--2:target ~ .tabs__links > .tabs__link-item > a[href="#content-2"],
+.tabs--nojs .tabs__content--3:target ~ .tabs__links > .tabs__link-item > a[href="#content-3"] {
   cursor: default;
 
   &::before {
@@ -298,15 +290,15 @@ screen {
   }
 }
 
-.tabs--nojs .tabs__content--1:target~.tabs__links>.tabs__link-item>a[href="#content-1"],
-.tabs--nojs .tabs__content--2:target~.tabs__links>.tabs__link-item>a[href="#content-2"],
-.tabs--nojs .tabs__content--3:target~.tabs__links>.tabs__link-item>a[href="#content-3"] {
+.tabs--nojs .tabs__content--1:target ~ .tabs__links > .tabs__link-item > a[href="#content-1"],
+.tabs--nojs .tabs__content--2:target ~ .tabs__links > .tabs__link-item > a[href="#content-2"],
+.tabs--nojs .tabs__content--3:target ~ .tabs__links > .tabs__link-item > a[href="#content-3"] {
   color: $color-blue;
 }
 
 
-.tabs--nojs .tabs__content--2:target~.tabs__links>.tabs__link-item>a[href="#content-1"]:not(:hover),
-.tabs--nojs .tabs__content--3:target~.tabs__links>.tabs__link-item>a[href="#content-1"]:not(:hover) {
+.tabs--nojs .tabs__content--2:target ~ .tabs__links > .tabs__link-item > a[href="#content-1"]:not(:hover),
+.tabs--nojs .tabs__content--3:target ~ .tabs__links > .tabs__link-item > a[href="#content-1"]:not(:hover) {
   cursor: pointer;
 
   &::before {
@@ -314,8 +306,8 @@ screen {
   }
 }
 
-.tabs--nojs .tabs__content--2:target~.tabs__links>.tabs__link-item>a[href="#content-1"]:hover,
-.tabs--nojs .tabs__content--3:target~.tabs__links>.tabs__link-item>a[href="#content-1"]:hover {
+.tabs--nojs .tabs__content--2:target ~ .tabs__links > .tabs__link-item > a[href="#content-1"]:hover,
+.tabs--nojs .tabs__content--3:target ~ .tabs__links > .tabs__link-item > a[href="#content-1"]:hover {
   color: $color-dark-pink;
   cursor: pointer;
 
@@ -324,7 +316,7 @@ screen {
   }
 }
 
-.tabs--nojs>.tabs__content:target {
+.tabs--nojs > .tabs__content:target {
   display: grid;
   animation: visibleCard 0.7s ease-in-out;
 }
@@ -333,8 +325,8 @@ screen {
   display: grid;
 }
 
-.tabs--nojs .tabs__content--2:target~.tabs__content--1,
-.tabs--nojs .tabs__content--3:target~.tabs__content--1 {
+.tabs--nojs .tabs__content--2:target ~ .tabs__content--1,
+.tabs--nojs .tabs__content--3:target ~ .tabs__content--1 {
   display: none;
   animation: visibleCard 0.7s ease-in-out;
 }

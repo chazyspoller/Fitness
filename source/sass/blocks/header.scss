@@ -16,7 +16,7 @@
 .header__contacts {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding: 28px 0 0 0;
 
   @include vp-1200 {
@@ -54,9 +54,7 @@
       font: 700 1.25em/1em $ff-titles;
     }
 
-    @media (hover: hover),
-    screen and (min-width: $vp-1200) {
-
+    @media (hover: hover), screen and (min-width: $vp-1200) {
       &:hover,
       &:focus {
         outline: none;
@@ -67,6 +65,19 @@
     &:active {
       opacity: 0.6;
     }
+  }
+}
+
+.header__menu-list {
+  @include reset-margins;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+
+  li {
+    padding: 0 10px;
   }
 }
 
@@ -87,8 +98,8 @@
   @include vp-1200 {
     margin-top: 0;
     min-height: 390px + 20px;
-    padding: 68px 0 0 0;
-    background: url("../img/intro-tablet.jpg") right 20px no-repeat;
+    padding: 65px 0 0 0;
+    background: url("../img/intro-tablet.jpg") right 17px no-repeat;
 
     @include retina {
       background-image: url("../img/intro-tablet@2x.jpg");
@@ -99,7 +110,7 @@
   @include vp-768 {
     background-image: none;
     min-height: auto;
-    padding: 72px 0 0 0;
+    padding: 69px 0 0 0;
 
     @include retina {
       background-image: none;
@@ -172,9 +183,7 @@
       font: 700 0.75em/1.2em $ff-default;
     }
 
-    @media (hover: hover),
-    screen and (min-width: $vp-1200) {
-
+    @media (hover: hover), screen and (min-width: $vp-1200) {
       &:hover,
       &:focus-visible {
         background-color: $color-default-white;
@@ -244,9 +253,7 @@
     text-transform: uppercase;
     transition: color 0.3s ease 0s;
 
-    @media (hover: hover),
-    screen and (min-width: $vp-1200) {
-
+    @media (hover: hover), screen and (min-width: $vp-1200) {
       &:hover,
       &:focus {
         outline: none;

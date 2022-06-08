@@ -3,6 +3,7 @@ import './modules/modals/yb-video';
 import './modules/modals/season-tickets';
 import './modules/modals/trainers';
 import './modules/modals/feedbacks';
+import './modules/modals/connect-form';
 
 // ---------------------------------
 

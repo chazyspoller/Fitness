@@ -51,9 +51,9 @@ body {
 }
 
 .input--error {
-  outline: 2px solid $color-error;
+  box-shadow: 0 4px 0 $color-error;
 
   &:focus {
-    outline: 2px solid $color-error;
+    box-shadow: 0 4px 0 $color-error;
   }
 }
