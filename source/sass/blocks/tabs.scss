@@ -120,11 +120,6 @@
         margin-bottom: 50px;
       }
 
-      span {
-        position: relative;
-        z-index: 1;
-      }
-
       &::before {
         content: attr(data-price);
         position: absolute;
@@ -135,6 +130,11 @@
         color: $color-big-price;
       }
     }
+  }
+
+  span {
+    position: relative;
+    z-index: 1;
   }
 
   a {

@@ -16,16 +16,16 @@ try {
 }
 
 const checkPhoneMask = (evt) => {
-  const el = evt.target;
-  const clearVal = el.dataset.phoneClear;
-  const pattern = el.dataset.phonePattern;
+  const element = evt.target;
+  const clearValue = element.dataset.phoneClear;
+  const pattern = element.dataset.phonePattern;
   const martixDef = '+7 (___) ___-__-__';
   const matrix = pattern ? pattern : martixDef;
   let i = 0;
   const def = matrix.replace(/\D/g, '');
   let val = evt.target.value.replace(/\D/g, '');
 
-  if (clearVal !== 'false' && evt.type === 'blur') {
+  if (clearValue !== 'false' && evt.type === 'blur') {
     if (val.length < matrix.match(/([\_\d])/g).length) {
       evt.target.value = '';
       evt.target.classList.add('input--error');

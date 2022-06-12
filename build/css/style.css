@@ -862,16 +862,33 @@ body main {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  position: relative;
   text-align: right;
   margin-top: -3px;
   min-height: 556px;
   padding: 111px 0 0 0;
-  background: url("../img/intro.jpg") 69.5% top no-repeat;
+}
+
+.header__image {
+  position: absolute;
+  top: -3px;
+  left: 39.7%;
+  height: 100%;
+}
+
+.header__image img {
+  width: 500px;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  background-color: rgba(28, 51, 116, 0.2);
 }
 
 .header__titles {
   color: #ffffff;
   width: 394px;
+  position: relative;
+  z-index: 1;
 }
 
 .header__titles p {
@@ -946,6 +963,8 @@ body main {
   flex-wrap: wrap;
   max-height: 500px;
   margin: 0 -10px 34px 0;
+  position: relative;
+  z-index: 1;
 }
 
 .header__social-list li {
@@ -1133,8 +1152,8 @@ body main {
 
 .gym__yb-video {
   position: absolute;
-  top: 71.2%;
-  left: 53.5%;
+  top: 71.5%;
+  left: 53.4%;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
@@ -1360,11 +1379,6 @@ body main {
   margin-bottom: 59px;
 }
 
-.tabs__content-item p:last-of-type span {
-  position: relative;
-  z-index: 1;
-}
-
 .tabs__content-item p:last-of-type::before {
   content: attr(data-price);
   position: absolute;
@@ -1375,6 +1389,11 @@ body main {
   transform: translateX(-50%);
   font: 700 1.67em/1em "Roboto Condensed", "Arial", sans-serif;
   color: #e8e8e8;
+}
+
+.tabs__content-item span {
+  position: relative;
+  z-index: 1;
 }
 
 .tabs__content-item a {
@@ -2591,11 +2610,6 @@ body main {
 }
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 1200px), (-o-min-device-pixel-ratio: 3/2) and (min-width: 1200px), (min-resolution: 1.5dppx) and (min-width: 1200px) {
-  .header__intro {
-    background-image: url("../img/intro@2x.jpg");
-    background-size: 500px 556px;
-  }
-
   .season-ticket::after {
     background-image: url("../img/prices-bg@2x.png");
     background-size: 287px 494px;
@@ -2629,7 +2643,17 @@ body main {
     margin-top: 0;
     min-height: 410px;
     padding: 65px 0 0 0;
-    background: url("../img/intro-tablet.jpg") right 17px no-repeat;
+  }
+
+  .header__image {
+    left: auto;
+    right: 0;
+    top: 17px;
+    height: calc(100% - 20px);
+  }
+
+  .header__image img {
+    width: 324px;
   }
 
   .header__titles {
@@ -2913,7 +2937,7 @@ body main {
   }
 
   .feedbacks {
-    padding: 0 62px 100px 62px;
+    padding: 0 62px 98px 62px;
   }
 
   .feedbacks h2 {
@@ -3132,11 +3156,6 @@ body main {
 }
 
 @media (max-width: 1199px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 1199px) and (-o-min-device-pixel-ratio: 3/2), (max-width: 1199px) and (min-resolution: 144dpi), (max-width: 1199px) and (min-resolution: 1.5dppx) {
-  .header__intro {
-    background-image: url("../img/intro-tablet@2x.jpg");
-    background-size: 324px 390px;
-  }
-
   .season-ticket::after {
     background-image: url("../img/prices-bg-tablet@2x.png");
     background-size: 347px 444px;
@@ -3178,9 +3197,12 @@ body main {
   }
 
   .header__intro {
-    background-image: none;
     min-height: auto;
     padding: 69px 0 0 0;
+  }
+
+  .header__image {
+    display: none;
   }
 
   .header__titles {
@@ -3654,10 +3676,6 @@ body main {
 }
 
 @media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 767px) and (-o-min-device-pixel-ratio: 3/2), (max-width: 767px) and (min-resolution: 144dpi), (max-width: 767px) and (min-resolution: 1.5dppx) {
-  .header__intro {
-    background-image: none;
-  }
-
   .season-ticket::after {
     background-image: none;
   }

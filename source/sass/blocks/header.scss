@@ -84,36 +84,49 @@
 .header__intro {
   display: flex;
   justify-content: space-between;
+  position: relative;
   text-align: right;
   margin-top: -3px;
   min-height: 556px;
   padding: 111px 0 0 0;
-  background: url("../img/intro.jpg") 69.5% top no-repeat;
-
-  @include retinaD {
-    background-image: url("../img/intro@2x.jpg");
-    background-size: 500px 556px;
-  }
 
   @include vp-1200 {
     margin-top: 0;
     min-height: 390px + 20px;
     padding: 65px 0 0 0;
-    background: url("../img/intro-tablet.jpg") right 17px no-repeat;
-
-    @include retina {
-      background-image: url("../img/intro-tablet@2x.jpg");
-      background-size: 324px 390px;
-    }
   }
 
   @include vp-768 {
-    background-image: none;
     min-height: auto;
     padding: 69px 0 0 0;
+  }
+}
 
-    @include retina {
-      background-image: none;
+.header__image {
+  position: absolute;
+  top: -3px;
+  left: 39.7%;
+  height: 100%;
+
+  @include vp-1200 {
+    left: auto;
+    right: 0;
+    top: 17px;
+    height: calc(100% - 20px);
+  }
+
+  @include vp-768 {
+    display: none;
+  }
+
+  img {
+    width: 500px;
+    height: 100%;
+    object-fit: cover;
+    background-color: $color-feedback-shadow;
+
+    @include vp-1200 {
+      width: 324px;
     }
   }
 }
@@ -121,6 +134,8 @@
 .header__titles {
   color: $color-default-white;
   width: 394px;
+  position: relative;
+  z-index: 1;
 
   @include vp-1200 {
     width: 325px;
@@ -235,6 +250,8 @@
   flex-wrap: wrap;
   max-height: 500px;
   margin: 0 -10px 34px 0;
+  position: relative;
+  z-index: 1;
 
   @include vp-1200 {
     display: none;
