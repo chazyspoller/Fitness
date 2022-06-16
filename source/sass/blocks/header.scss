@@ -38,6 +38,19 @@
       height: 15px;
     }
   }
+}
+
+.header__menu-list {
+  @include reset-margins;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+
+  li {
+    padding: 0 10px;
+  }
 
   a {
     font: 700 1.63em/1em $ff-titles;
@@ -65,19 +78,6 @@
     &:active {
       opacity: 0.6;
     }
-  }
-}
-
-.header__menu-list {
-  @include reset-margins;
-  list-style: none;
-  display: flex;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  margin: 0 -10px;
-
-  li {
-    padding: 0 10px;
   }
 }
 

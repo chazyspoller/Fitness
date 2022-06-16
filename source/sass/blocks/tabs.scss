@@ -274,41 +274,14 @@
 }
 
 .tabs--nojs > .tabs__links > .tabs__link-item > a[href="#content-1"],
-.tabs--nojs .tabs__content--2:target ~ .tabs__links > .tabs__link-item > a[href="#content-2"],
-.tabs--nojs .tabs__content--3:target ~ .tabs__links > .tabs__link-item > a[href="#content-3"] {
-  cursor: default;
-
-  &::before {
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: $color-dark-pink;
-  }
-}
-
-.tabs--nojs .tabs__content--1:target ~ .tabs__links > .tabs__link-item > a[href="#content-1"],
-.tabs--nojs .tabs__content--2:target ~ .tabs__links > .tabs__link-item > a[href="#content-2"],
-.tabs--nojs .tabs__content--3:target ~ .tabs__links > .tabs__link-item > a[href="#content-3"] {
+.tabs--nojs > .tabs__links > .tabs__link-item > a[href="#content-2"],
+.tabs--nojs > .tabs__links > .tabs__link-item > a[href="#content-3"] {
+  cursor: pointer;
   color: $color-blue;
-}
 
-
-.tabs--nojs .tabs__content--2:target ~ .tabs__links > .tabs__link-item > a[href="#content-1"]:not(:hover),
-.tabs--nojs .tabs__content--3:target ~ .tabs__links > .tabs__link-item > a[href="#content-1"]:not(:hover) {
-  cursor: pointer;
-
-  &::before {
-    display: none;
+  &:hover {
+    color: $color-dark-pink;
   }
-}
-
-.tabs--nojs .tabs__content--2:target ~ .tabs__links > .tabs__link-item > a[href="#content-1"]:hover,
-.tabs--nojs .tabs__content--3:target ~ .tabs__links > .tabs__link-item > a[href="#content-1"]:hover {
-  color: $color-dark-pink;
-  cursor: pointer;
 
   &::before {
     display: none;

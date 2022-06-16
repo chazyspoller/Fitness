@@ -36,17 +36,17 @@
   list-style: none;
   display: grid;
   grid-template-columns: 2fr 1fr 2fr;
-  grid-template-rows: 1fr 1fr;
-  grid-auto-rows: 1fr;
-  gap: 0 6%;
+  grid-template-rows: repeat(2, minmax(155px, max-content));
+  grid-auto-rows: minmax(155px, max-content);
+  gap: 0 5.55%;
   max-width: 1040px;
   margin: 0 auto;
 
   @include vp-1200 {
     padding: 0;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: max-content 1.5fr max-content;
-    gap: 45px 4.8%;
+    grid-template-rows: max-content 1fr max-content;
+    gap: 35px 4.8%;
   }
 
   @include vp-768 {
@@ -56,10 +56,11 @@
 
 .advantages__item {
   color: $color-blue;
+  padding-bottom: 10px;
   display: grid;
   grid-template-columns: min-content 1fr;
   grid-template-rows: min-content min-content;
-  gap: 10px 30px;
+  gap: 10px 33px;
   border-bottom: 1px solid $color-advantages-border;
 
   @include vp-1200 {
@@ -135,6 +136,16 @@
   &--left {
     margin-left: auto;
     max-width: 325px;
+    gap: 10px 30px;
+
+    &:first-of-type {
+      max-width: 318px;
+
+      @include vp-1200 {
+        max-width: 100%;
+        margin-left: 0;
+      }
+    }
 
     @include vp-1200 {
       max-width: 100%;
@@ -143,13 +154,18 @@
   }
 
   &--bottom {
+    padding: 10px 0 0 0;
     align-self: flex-end;
     border: none;
   }
 
   &--main {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
     min-width: 240px;
+    height: 100%;
     background-color: $color-feedback;
     padding: 55px 34px 60px;
     text-align: center;
@@ -182,10 +198,6 @@
 
       @include vp-1200 {
         font: 700 1.38em/1.2em $ff-default;
-        margin-bottom: 20px;
-      }
-
-      @include vp-768 {
         margin-bottom: 12px;
       }
 
@@ -198,7 +210,7 @@
 
         @include vp-1200 {
           font: 700 4.63em/1em $ff-default;
-          margin-bottom: 4px;
+          margin-bottom: 0;
         }
 
         @include vp-768 {

@@ -73,13 +73,6 @@
   }
 
   li {
-    &:last-of-type {
-      grid-column-start: 2;
-      grid-column-end: 3;
-      grid-row-start: 1;
-      grid-row-end: 2;
-    }
-
     @include vp-768 {
       &:first-of-type {
         grid-row-start: 1;
@@ -87,9 +80,16 @@
         align-self: end;
       }
 
-      &:last-of-type {
+      &:nth-of-type(2) {
         grid-column-start: 1;
         grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end: 4;
+      }
+
+      &:last-of-type {
+        grid-column-start: 2;
+        grid-column-end: 3;
         grid-row-start: 3;
         grid-row-end: 4;
       }

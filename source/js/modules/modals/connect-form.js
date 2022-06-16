@@ -27,7 +27,6 @@ const checkPhoneMask = (evt) => {
 
   if (clearValue !== 'false' && evt.type === 'blur') {
     if (val.length < matrix.match(/([\_\d])/g).length) {
-      evt.target.value = '';
       evt.target.classList.add('input--error');
       return;
     }
@@ -75,22 +74,29 @@ const activateValid = () => {
 
     nameField.addEventListener('focus', removeErrorClass);
   }
-  if (checkExist || nameField) {
-    if (storagePhone) {
+
+  if (checkExist || nameField || phoneField) {
+    if (storagePhone && phoneField) {
       phoneField.value = storagePhone;
     } else {
-      phoneField.value = '';
+      if (phoneField) {
+        phoneField.value = '';
+      }
     }
-    if (storageName) {
+    if (storageName && nameField) {
       nameField.value = storageName;
     }
   }
 };
 
-const useLocalStorage = () => {
+const onSubmitForm = () => {
   if (isStorageSupport) {
-    localStorage.setItem('user-name', nameField.value);
-    localStorage.setItem('user-phone', phoneField.value);
+    if (nameField) {
+      localStorage.setItem('user-name', nameField.value);
+    }
+    if (phoneField) {
+      localStorage.setItem('user-phone', phoneField.value);
+    }
   }
 };
 
@@ -101,7 +107,7 @@ if (phoneField) {
 const addListenersForForm = () => {
   activateValid();
 
-  form.addEventListener('submit', useLocalStorage);
+  form.addEventListener('submit', onSubmitForm);
 };
 
 addListenersForForm();

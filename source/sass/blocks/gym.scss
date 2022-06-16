@@ -1,5 +1,6 @@
 .gym {
   padding: 120px 0 235px;
+  position: relative;
 
   @include vp-1200 {
     padding: 95px 0 183px;
@@ -13,7 +14,6 @@
 .gym__wrapper {
   display: flex;
   justify-content: space-between;
-  position: relative;
 
   @include vp-1200 {
     flex-direction: column;
@@ -111,12 +111,12 @@
 
 .gym__yb-video {
   position: absolute;
-  top: 71.5%;
-  left: 53.4%;
+  bottom: 119px;
+  left: 52.8%;
   transform: translateX(-50%);
 
   @include vp-1200 {
-    top: 85.5%;
+    bottom: 100px;
     left: 50%;
   }
 

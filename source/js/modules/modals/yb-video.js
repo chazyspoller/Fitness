@@ -39,6 +39,15 @@ const setupVideo = (video) => {
       video.appendChild(iframe);
     });
 
+    link.addEventListener('keydown', (evt) => {
+      if (evt.keyCode === 13 || evt.key === 'Enter') {
+        let iframe = createIframe(id);
+
+        linkBox.remove();
+        video.appendChild(iframe);
+      }
+    });
+
     link.removeAttribute('href');
   }
 };

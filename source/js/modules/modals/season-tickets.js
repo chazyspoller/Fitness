@@ -20,6 +20,7 @@ const onTabClick = (evt) => {
   const id = evt.target.getAttribute('href');
   const linkWrap = evt.target.closest('li');
   const content = document.querySelector(id);
+  const activeLink = linkWrap.querySelector('a');
 
   if (content) {
     tabLinks.forEach((linkBox) => {
@@ -29,6 +30,7 @@ const onTabClick = (evt) => {
 
         if (block) {
           linkBox.classList.remove('tabs__link-item--active');
+          link.setAttribute('tabindex', '0');
           block.classList.remove('tabs__content--active');
           block.removeEventListener('click', onContentClick);
         }
@@ -36,6 +38,7 @@ const onTabClick = (evt) => {
     });
 
     linkWrap.classList.add('tabs__link-item--active');
+    activeLink.setAttribute('tabindex', '-1');
     content.classList.add('tabs__content--active');
     content.addEventListener('click', onContentClick);
   }
@@ -45,6 +48,7 @@ const activateTabs = () => {
   tabsContentBlocks[2].classList.add('tabs__content--active');
   tabsContentBlocks[2].addEventListener('click', onContentClick);
   tabLinks[0].classList.add('tabs__link-item--active');
+  tabLinks[0].querySelector('a').setAttribute('tabindex', '-1');
   tabsBlock.classList.remove('tabs--nojs');
   tabLinks.forEach((el) => el.addEventListener('click', onTabClick));
 };

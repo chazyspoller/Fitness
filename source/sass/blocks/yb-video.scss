@@ -9,7 +9,9 @@
   }
 
   @include vp-768 {
-    width: 100%;
+    width: 320px;
+    max-width: 100%;
+    margin: 0 auto;
   }
 
   a {
