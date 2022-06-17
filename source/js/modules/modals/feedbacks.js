@@ -13,6 +13,7 @@ let swiperFeedbacks = new Swiper('.feedbacks__list', {
   simulateTouch: false,
   grabCursor: true,
   autoHeight: true,
+  observer: true,
 
   keyboard: {
     enabled: true,
@@ -39,5 +40,18 @@ const activateFeedbacksSwiper = () => {
     feedbacksCards.forEach((card) => card.classList.remove('feedbacks__item--nojs'));
   }
 };
+
+const observeFeedback = (mutationsList) => {
+  mutationsList.forEach(() => {
+    swiperFeedbacks.update();
+  });
+};
+
+let observer = new MutationObserver(observeFeedback);
+observer.observe(feedbacksBox, {
+  childList: true,
+  subtree: true,
+  characterData: true,
+});
 
 activateFeedbacksSwiper();

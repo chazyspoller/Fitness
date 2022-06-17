@@ -4,11 +4,10 @@
   position: absolute;
   z-index: 5;
   top: 50%;
-  transform: translateY(-75%);
+  transform: translateY(-50%);
   cursor: pointer;
 
   @include vp-768 {
-    top: 52%;
     width: 30px;
     height: 19px;
   }

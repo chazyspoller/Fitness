@@ -446,6 +446,7 @@ html :root {
   -ms-flex-negative: 0;
   flex-shrink: 0;
   width: 100%;
+  height: 100%;
   position: relative;
   -webkit-transition-property: -webkit-transform;
   transition-property: -webkit-transform;
@@ -773,9 +774,9 @@ body main {
   position: absolute;
   z-index: 5;
   top: 50%;
-  -webkit-transform: translateY(-75%);
-  -ms-transform: translateY(-75%);
-  transform: translateY(-75%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
   cursor: pointer;
 }
 
@@ -1099,7 +1100,7 @@ body main {
 
 .gym__image img {
   width: 100%;
-  height: 100%;
+  height: 401px;
   background-color: #495a7d;
   -o-object-fit: cover;
   object-fit: cover;
@@ -1674,6 +1675,7 @@ body main {
 
 .trainers__list {
   width: 100%;
+  max-width: calc(4 * 260px + 3 * 40px);
 }
 
 .trainers__wrap--nojs {
@@ -1714,14 +1716,21 @@ body main {
 .trainers__item {
   color: #ffffff;
   position: relative;
-  width: 260px;
-  height: 297px;
+  width: 22.4%;
+  height: 0;
+  padding-top: 25.6%;
   text-align: center;
   overflow: hidden;
 }
 
+.trainers__item:not(:last-of-type) {
+  margin-right: 3.5%;
+}
+
 .trainers__info {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   padding: 58px 30px;
   max-height: 100%;
   scrollbar-width: thin;
@@ -1805,8 +1814,15 @@ body main {
   border-radius: 50%;
 }
 
+.trainers__slider-wrap {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  max-width: calc(4 * 260px + 3 * 40px);
+}
+
 .trainers__button--prev {
-  left: 2.2%;
+  left: -75px;
 }
 
 .trainers__button--prev::before {
@@ -1822,7 +1838,7 @@ body main {
 }
 
 .trainers__button--next {
-  right: 2.2%;
+  right: -75px;
 }
 
 .trainers__button--nojs {
@@ -1868,7 +1884,7 @@ body main {
   margin: 0;
   padding: 0;
   padding: 62px 55px 57px 62px;
-  max-height: 244px;
+  height: auto;
   background-color: #1c3374;
   color: #ffffff;
   display: -ms-grid;
@@ -1893,10 +1909,6 @@ body main {
   margin: 0;
   padding: 0;
   font: 400 1em/1.4em "Roboto Condensed", "Arial", sans-serif;
-  padding-right: 5px;
-  max-height: 90px;
-  scrollbar-width: thin;
-  overflow-y: auto;
 }
 
 .feedbacks__image {
@@ -2727,6 +2739,10 @@ body main {
     height: 345px;
   }
 
+  .gym__image img {
+    height: 100%;
+  }
+
   .gym__info {
     -webkit-box-flex: 1;
     -ms-flex: 1 1 100%;
@@ -2885,7 +2901,7 @@ body main {
   }
 
   .trainers {
-    padding: 0 62px 100px 62px;
+    padding: 0 0 100px 0;
   }
 
   .trainers h2 {
@@ -2894,14 +2910,22 @@ body main {
     text-align: center;
   }
 
+  .trainers__list {
+    max-width: calc(2 * 268px + 1 * 30px);
+  }
+
   .trainers__wrap--nojs {
     -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
   }
 
   .trainers__item {
-    width: 268px;
+    width: 47.35%;
     height: 294px;
+  }
+
+  .trainers__item:not(:last-of-type) {
+    margin-right: 5.5%;
   }
 
   .trainers__item--nojs::before {
@@ -2935,12 +2959,16 @@ body main {
     padding: 56px 30px;
   }
 
+  .trainers__slider-wrap {
+    max-width: calc(2 * 268px + 1 * 30px + 100px);
+  }
+
   .trainers__button--prev {
-    left: 3.8%;
+    left: -22px;
   }
 
   .trainers__button--next {
-    right: 3.8%;
+    right: -22px;
   }
 
   .feedbacks {
@@ -3180,7 +3208,6 @@ body main {
   }
 
   .swip-button {
-    top: 52%;
     width: 30px;
     height: 19px;
   }
@@ -3447,8 +3474,8 @@ body main {
     font: 700 2em/1em "Bebas Neue", "Arial", sans-serif;
   }
 
-  .trainers > .container {
-    padding: 0 32px;
+  .trainers__list {
+    max-width: 226px;
   }
 
   .trainers__wrap--nojs {
@@ -3474,12 +3501,16 @@ body main {
     line-height: 1.35em;
   }
 
+  .trainers__slider-wrap {
+    max-width: 286px;
+  }
+
   .trainers__button--prev {
-    left: 5px;
+    left: -10px;
   }
 
   .trainers__button--next {
-    right: 5px;
+    right: -10px;
   }
 
   .feedbacks {

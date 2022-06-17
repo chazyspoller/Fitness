@@ -26,17 +26,17 @@ let swiperTrainers = new Swiper('.trainers__list', {
   breakpoints: {
     320: {
       slidesPerView: 'auto',
-      spaceBetween: 15,
+      spaceBetween: 0,
       initialSlide: 2,
     },
     768: {
       slidesPerView: 'auto',
-      spaceBetween: 30,
+      spaceBetween: 0,
       initialSlide: 2,
     },
     1200: {
       slidesPerView: 'auto',
-      spaceBetween: 40,
+      spaceBetween: 0,
       initialSlide: 0,
     },
   },
